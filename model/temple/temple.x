@@ -8403,7 +8403,7 @@ Mesh {
    0.000000;0.000000;0.000000;;
    0.000000;0.000000;0.000000;;
    TextureFilename {
-    "C:\\Users\\student\\Pictures\\pillar000.jpg";
+    "data\\pillar000.jpg";
    }
   }
   Material {
@@ -8424,7 +8424,7 @@ Mesh {
    0.000000;0.000000;0.000000;;
    0.000000;0.000000;0.000000;;
    TextureFilename {
-    "C:\\Users\\student\\Pictures\\hasira000.jpg";
+    "data\\hasira000.jpg";
    }
   }
   Material {
@@ -8433,7 +8433,7 @@ Mesh {
    0.450000;0.450000;0.450000;;
    0.000000;0.000000;0.000000;;
    TextureFilename {
-    "C:\\Users\\student\\Pictures\\stend004.jpg";
+    "data\\stend004.jpg";
    }
   }
   Material {
@@ -8442,7 +8442,7 @@ Mesh {
    0.180000;0.180000;0.180000;;
    0.000000;0.000000;0.000000;;
    TextureFilename {
-    "C:\\Users\\student\\Pictures\\stend003.jpg";
+    "data\\stend003.jpg";
    }
   }
   Material {
