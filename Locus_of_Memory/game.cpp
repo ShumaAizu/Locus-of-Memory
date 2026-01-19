@@ -217,7 +217,7 @@ void UpdateGame(void)
 	}
 
 
-	if (GetKeyboardTrigger(DIK_E) == true && *pFade == FADE_NONE)
+	if (GetKeyboardTrigger(DIK_O) == true && *pFade == FADE_NONE)
 	{// 0ˆÈ‰º‚É‚È‚Á‚½
 
 		g_gameState = GAMESTATE_NONE;

@@ -216,13 +216,10 @@ void UpdateTutorial(void)
 
 	
 
-	if (GetKeyboardTrigger(DIK_E) == true && *pFade == FADE_NONE)
+	if (GetKeyboardTrigger(DIK_O) == true && *pFade == FADE_NONE)
 	{// 0以下になった
 
-		g_nCntFade++;
 
-		if (g_nCntFade >= 60)
-		{
 			g_TutorialState = TUTORIALSTATE_NONE;
 
 			// フェード設定(リザルト画面に移行)
@@ -230,7 +227,7 @@ void UpdateTutorial(void)
 
 			// サウンド停止
 			//StopSound(SOUND_LABEL_BGM000);
-		}
+		
 
 	}
 
