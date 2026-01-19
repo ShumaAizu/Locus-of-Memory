@@ -11,12 +11,12 @@
 //#include "sound.h"
 //#include "effect.h"
 //#include "particle.h"
-//#include "title.h"
-//#include "tutorial.h"
-//#include "game.h"
-//#include "result.h"
+#include "title.h"
+#include "tutorial.h"
+#include "game.h"
+#include "result.h"
 //#include "ranking.h"
-//#include "fade.h"
+#include "fade.h"
 
 #include "camera.h"
 //#include "light.h"
@@ -384,23 +384,23 @@ void Uninit(void)
 	//// ライトの終了処理
 	//UninitLight();
 
-	//// タイトル画面の終了処理
-	//UninitTitle();
+	// タイトル画面の終了処理
+	UninitTitle();
 
-	//// チュートリアル画面の終了処理
-	//UninitTutorial();
+	// チュートリアル画面の終了処理
+	UninitTutorial();
 
-	//// ゲーム画面の終了処理
-	//UninitGame();
+	// ゲーム画面の終了処理
+	UninitGame();
 
-	//// リザルト画面の終了処理
-	//UninitResult();
+	// リザルト画面の終了処理
+	UninitResult();
 
 	//// ランキング画面の終了処理
 	//UninitRanking();
 
-	//// フェードの終了処理
-	//UninitFade();
+	// フェードの終了処理
+	UninitFade();
 
 	//// サウンドを止める
 	//StopSound();
@@ -451,37 +451,37 @@ void Update(void)
 	// カメラの更新処理
 	UpdateCamera();
 
-	//switch (g_mode)
-	//{
-	//	// タイトルモード
-	//case MODE_TITLE:
-	//	UpdateTitle();
-	//	break;
+	switch (g_mode)
+	{
+		// タイトルモード
+	case MODE_TITLE:
+		UpdateTitle();
+		break;
 
-	//	// チュートリアルモード
-	//case MODE_TUTORIAL:
-	//	UpdateTutorial();
-	//	break;
+		// チュートリアルモード
+	case MODE_TUTORIAL:
+		UpdateTutorial();
+		break;
 
-	//	// ゲームモード
-	//case MODE_GAME:
-	//	UpdateGame();
-	//	break;
+		// ゲームモード
+	case MODE_GAME:
+		UpdateGame();
+		break;
 
-	//	// リザルトモード
-	//case MODE_RESULT:
-	//	UpdateResult();
-	//	break;
+		// リザルトモード
+	case MODE_RESULT:
+		UpdateResult();
+		break;
 
 	//	// ランキングモード
 	//case MODE_RANKING:
 	//	UpdateRanking();
 	//	break;
-	//}
+	}
 
 
-	//// フェードの更新処理
-	//UpdateFade();
+	// フェードの更新処理
+	UpdateFade();
 }
 
 //===============================================================================
@@ -502,37 +502,37 @@ void Draw(void)
 			// カメラの設定処理
 			SetCamera(nCntCamera);
 
-			//switch (g_mode)
-			//{
-			//	// タイトルモード
-			//case MODE_TITLE:
-			//	DrawTitle();
-			//	break;
+			switch (g_mode)
+			{
+				// タイトルモード
+			case MODE_TITLE:
+				DrawTitle();
+				break;
 
-			//	// チュートリアルモード
-			//case MODE_TUTORIAL:
-			//	DrawTutorial();
-			//	break;
+				// チュートリアルモード
+			case MODE_TUTORIAL:
+				DrawTutorial();
+				break;
 
-			//	// ゲームモード
-			//case MODE_GAME:
-			//	DrawGame();
-			//	break;
+				// ゲームモード
+			case MODE_GAME:
+				DrawGame();
+				break;
 
-			//	// リザルトモード
-			//case MODE_RESULT:
-			//	DrawResult();
-			//	break;
+				// リザルトモード
+			case MODE_RESULT:
+				DrawResult();
+				break;
 
 			//	// ランキングモード
 			//case MODE_RANKING:
 			//	DrawRanking();
 			//	break;
-			//}
+			}
 		}
 
-		//// フェードの描画処理
-		//DrawFade();
+		// フェードの描画処理
+		DrawFade();
 
 #ifdef _DEBUG
 
@@ -562,69 +562,69 @@ LPDIRECT3DDEVICE9 GetDevice(void)
 //==================================================================================
 void SetMode(MODE mode)
 {
-	//// 現在のモードの終了処理
-	//switch (g_mode)
-	//{
-	//	// タイトルモード
-	//case MODE_TITLE:
-	//	UninitTitle();
-	//	break;
+	// 現在のモードの終了処理
+	switch (g_mode)
+	{
+		// タイトルモード
+	case MODE_TITLE:
+		UninitTitle();
+		break;
 
-	//	// チュートリアルモード
-	//case MODE_TUTORIAL:
-	//	UninitTutorial();
-	//	break;
+		// チュートリアルモード
+	case MODE_TUTORIAL:
+		UninitTutorial();
+		break;
 
-	//	// ゲームモード
-	//case MODE_GAME:
-	//	UninitGame();
-	//	break;
+		// ゲームモード
+	case MODE_GAME:
+		UninitGame();
+		break;
 
-	//	// リザルトモード
-	//case MODE_RESULT:
-	//	UninitResult();
-	//	break;
+		// リザルトモード
+	case MODE_RESULT:
+		UninitResult();
+		break;
 
 	//	// ランキングモード
 	//case MODE_RANKING:
 	//	UninitRanking();
 	//	break;
-	//}
+	}
 
-	//// 新しいモードの初期化処理
-	//switch (mode)
-	//{
-	//	// タイトルモード
-	//case MODE_TITLE:
-	//	InitTitle();
-	//	break;
+	// 新しいモードの初期化処理
+	switch (mode)
+	{
+		// タイトルモード
+	case MODE_TITLE:
+		InitTitle();
+		break;
 
-	//	// チュートリアルモード
-	//case MODE_TUTORIAL:
-	//	InitTutorial();
-	//	break;
+		// チュートリアルモード
+	case MODE_TUTORIAL:
+		InitTutorial();
+		break;
 
-	//	// ゲームモード
-	//case MODE_GAME:
-	//	InitGame();
-	//	break;
+		// ゲームモード
+	case MODE_GAME:
+		InitGame();
+		break;
 
-	//	// リザルトモード
-	//case MODE_RESULT:
-	//	InitResult();
-	//	break;
+		// リザルトモード
+	case MODE_RESULT:
+		InitResult();
+		break;
 
 	//	// ランキングモード
 	//case MODE_RANKING:
 	//	InitRanking();
 	//	break;
-	//}
+	}
 
-	//// カメラをセット
-	//SetModeCamera(mode);
+	// カメラをセット
+	SetModeCamera(mode);
 
-	//// モードの更新
-	//g_mode = mode;
+	// モードの更新
+	g_mode = mode;
 }
 
 //==================================================================================
