@@ -83,7 +83,7 @@ void InitPlayer(void)
 			// マテリアルデータへのポインタを取得
 			pMat = (D3DXMATERIAL*)g_pBuffMatPlayer[nCntPlayer]->GetBufferPointer();
 
-			for (int nCntMat = 0; nCntMat < (int)g_dwNumMatPlayer[nCntModel]; nCntMat++)
+			for (int nCntMat = 0; nCntMat < (int)g_dwNumMatPlayer[nCntPlayer]; nCntMat++)
 			{
 				if (pMat[nCntMat].pTextureFilename != NULL)	// テクスチャファイルが存在する場合
 				{
@@ -421,7 +421,7 @@ void UpdatePlayer(void)
 	}
 
 	// プレイヤーの方向を補正
-	for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer)
+	for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
 	{
 		if (g_player[nCntPlayer].bUse == true)
 		{
