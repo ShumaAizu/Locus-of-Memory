@@ -24,7 +24,7 @@ TEXTURE_FILENAME = data/TEXTURE/grass000.png		# [5]草テクスチャ
 #------------------------------------------------------------------------------
 # モデル数
 #------------------------------------------------------------------------------
-NUM_MODEL = 4
+NUM_MODEL = 5
 
 #------------------------------------------------------------------------------
 # モデルファイル名
@@ -33,6 +33,7 @@ MODEL_FILENAME = data/MODEL/castle/castle.x		# [0]城
 MODEL_FILENAME = data/MODEL/house/house.x       # [1]家
 MODEL_FILENAME = data/MODEL/shop/X/shop000.x		# [2]店1号
 MODEL_FILENAME = data/MODEL/shop/X/shop001.x		# [3]店2号
+MODEL_FILENAME = data/MODEL/streetlight/siro.x		# [4]城(仮)
 #------------------------------------------------------------------------------
 # カメラ情報
 #------------------------------------------------------------------------------
@@ -251,6 +252,41 @@ MODELSET
 END_MODELSET
 
 MODELSET
+	TYPE = 1
+	POS = 1017 0 145
+	ROT = 0 0 0
+	SHADOW = 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 1436 0 347
+	ROT = 0 90 0
+	SHADOW = 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 1451 0 1063
+	ROT = 0 180 0
+	SHADOW = 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 1055 0 1004
+	ROT = 0 90 0
+	SHADOW = 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 680 0 1252
+	ROT = 0 90 0
+	SHADOW = 0
+END_MODELSET
+
+MODELSET
 	TYPE = 2
 	POS = 399 0 -1540
 	ROT = 0 90 0
@@ -275,6 +311,20 @@ MODELSET
 	TYPE = 3
 	POS = 1510 0 -900
 	ROT = 0 -90 0
+	SHADOW = 0
+END_MODELSET
+
+MODELSET
+	TYPE = 3
+	POS = 1962 0 800
+	ROT = 0 -90 0
+	SHADOW = 0
+END_MODELSET
+
+MODELSET
+	TYPE = 4
+	POS = 110 0 4100
+	ROT = 0 0 0
 	SHADOW = 0
 END_MODELSET
 
