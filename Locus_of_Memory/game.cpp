@@ -228,6 +228,7 @@ void UpdateGame(void)
 		// ƒTƒEƒ“ƒh’âŽ~
 		//StopSound(SOUND_LABEL_BGM000);
 	}
+
 	//else if (/*GetKeyboardTrigger(DIK_L) == true && *pFade == FADE_NONE ||*/ pTimer->Time <= 0 && *pFade == FADE_NONE)
 	//{// 0ˆÈ‰º‚É‚È‚Á‚½
 

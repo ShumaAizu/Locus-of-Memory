@@ -28,7 +28,7 @@ void InitFade(MODE modeNext)
 
     g_fade = FADE_IN;
     g_modeNext = g_modeNext;
-    g_colorFade = D3DXCOLOR(0.0f,0.0f,0.0f,1.0f);
+    g_colorFade = D3DXCOLOR(1.0f,1.0f,1.0f,0.0f);
 
     // 頂点バッファの生成
     pDevice->CreateVertexBuffer(sizeof(VERTEX_2D) * 4,
@@ -102,7 +102,7 @@ void UpdateFade(void)
     {
         if (g_fade == FADE_IN)
         {
-            g_colorFade.a -= 0.05;
+            g_colorFade.a -= 0.03;
 
             if (g_colorFade.a <= 0.0f)
             {
@@ -115,7 +115,7 @@ void UpdateFade(void)
             // ポーズを無効にする
             SetEnablePause(false);
 
-            g_colorFade.a += 0.05;
+            g_colorFade.a += 0.03;
 
             if (g_colorFade.a >= 1.0f)
             {
@@ -167,7 +167,7 @@ void SetFade(MODE modeNext)
 {
     g_fade = FADE_OUT;
     g_modeNext = modeNext;
-    g_colorFade = D3DXCOLOR(0.0f, 0.0f, 0.0f, 0.0f);
+    g_colorFade = D3DXCOLOR(1.0f, 1.0f, 1.0f, 0.0f);
 
 }
 FADE *GetFade(void)
