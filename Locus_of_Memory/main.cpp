@@ -18,7 +18,7 @@
 //#include "ranking.h"
 //#include "fade.h"
 
-//#include "camera.h"
+#include "camera.h"
 //#include "light.h"
 
 //*****************************************************************************
@@ -339,8 +339,8 @@ HRESULT Init(HINSTANCE hInstance, HWND hWnd, BOOL bWindow)
 		return E_FAIL;
 	}
 
-	//// カメラの初期化
-	//InitCamera();
+	// カメラの初期化
+	InitCamera();
 
 	//// ライトの初期化
 	//InitLight();
@@ -378,8 +378,8 @@ void Uninit(void)
 	//// デバッグ表示の終了処理
 	//UninitDebugProc();
 
-	//// カメラの終了処理
-	//UninitCamera();
+	// カメラの終了処理
+	UninitCamera();
 
 	//// ライトの終了処理
 	//UninitLight();
@@ -448,8 +448,8 @@ void Update(void)
 	//// デバッグ表示の更新処理
 	//UpdateDebugProc();
 
-	//// カメラの更新処理
-	//UpdateCamera();
+	// カメラの更新処理
+	UpdateCamera();
 
 	//switch (g_mode)
 	//{
@@ -497,36 +497,39 @@ void Draw(void)
 	// 描画開始
 	if (SUCCEEDED(g_pD3DDevice->BeginScene()))
 	{// 描画開始が成功した場合
-		//// カメラの設定処理
-		//SetCamera();
+		for (int nCntCamera = 0; nCntCamera < MAX_CAMERA; nCntCamera++)
+		{
+			// カメラの設定処理
+			SetCamera(nCntCamera);
 
-		//switch (g_mode)
-		//{
-		//	// タイトルモード
-		//case MODE_TITLE:
-		//	DrawTitle();
-		//	break;
+			//switch (g_mode)
+			//{
+			//	// タイトルモード
+			//case MODE_TITLE:
+			//	DrawTitle();
+			//	break;
 
-		//	// チュートリアルモード
-		//case MODE_TUTORIAL:
-		//	DrawTutorial();
-		//	break;
+			//	// チュートリアルモード
+			//case MODE_TUTORIAL:
+			//	DrawTutorial();
+			//	break;
 
-		//	// ゲームモード
-		//case MODE_GAME:
-		//	DrawGame();
-		//	break;
+			//	// ゲームモード
+			//case MODE_GAME:
+			//	DrawGame();
+			//	break;
 
-		//	// リザルトモード
-		//case MODE_RESULT:
-		//	DrawResult();
-		//	break;
+			//	// リザルトモード
+			//case MODE_RESULT:
+			//	DrawResult();
+			//	break;
 
-		//	// ランキングモード
-		//case MODE_RANKING:
-		//	DrawRanking();
-		//	break;
-		//}
+			//	// ランキングモード
+			//case MODE_RANKING:
+			//	DrawRanking();
+			//	break;
+			//}
+		}
 
 		//// フェードの描画処理
 		//DrawFade();
