@@ -35,7 +35,7 @@ LPD3DXMESH			g_pMeshPlayer[MAX_PLAYER] = {};				// ƒƒbƒVƒ…(’¸“_î•ñ)‚Ö‚Ìƒ|ƒCƒ“ƒ
 LPD3DXBUFFER		g_pBuffMatPlayer[MAX_PLAYER] = {};			// ƒ}ƒeƒŠƒAƒ‹‚Ö‚Ìƒ|ƒCƒ“ƒ^
 DWORD				g_dwNumMatPlayer[MAX_PLAYER] = {0, 0};		// ƒ}ƒeƒŠƒAƒ‹‚Ì”
 LPDIRECT3DTEXTURE9	g_apTexturePlayer[MAX_PLAYER][MAX_MAT];		// ƒeƒNƒXƒ`ƒƒ‚Ö‚Ì	ƒ|ƒCƒ“ƒ^
-Player				g_player[MAX_PLAYER];									// ƒvƒŒƒCƒ„[‚Ìî•ñ‚ðŠi”[
+Player				g_player[MAX_PLAYER];						// ƒvƒŒƒCƒ„[‚Ìî•ñ‚ðŠi”[
 
 // 1P‚Ìƒ‚ƒfƒ‹
 const char* c_apFilename1PModel[MAX_MODEL] =
@@ -83,7 +83,7 @@ void InitPlayer(void)
 			// ƒ}ƒeƒŠƒAƒ‹ƒf[ƒ^‚Ö‚Ìƒ|ƒCƒ“ƒ^‚ðŽæ“¾
 			pMat = (D3DXMATERIAL*)g_pBuffMatPlayer[nCntPlayer]->GetBufferPointer();
 
-			for (int nCntMat = 0; nCntMat < (int)g_dwNumMatPlayer; nCntMat++)
+			for (int nCntMat = 0; nCntMat < (int)g_dwNumMatPlayer[nCntModel]; nCntMat++)
 			{
 				if (pMat[nCntMat].pTextureFilename != NULL)	// ƒeƒNƒXƒ`ƒƒƒtƒ@ƒCƒ‹‚ª‘¶Ý‚·‚éê‡
 				{
