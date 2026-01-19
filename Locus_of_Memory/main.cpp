@@ -620,9 +620,6 @@ void SetMode(MODE mode)
 	//	break;
 	}
 
-	// カメラをセット
-	SetModeCamera(mode);
-
 	// モードの更新
 	g_mode = mode;
 }

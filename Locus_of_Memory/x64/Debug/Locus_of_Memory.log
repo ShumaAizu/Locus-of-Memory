@@ -1,4 +1,21 @@
-﻿  main.cpp
+﻿  pch.cpp
+  C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\pch.h(36,1): warning C4005: 'DIRECTINPUT_VERSION': マクロが再定義されました。
+C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include\dinput.h(42): message : 'DIRECTINPUT_VERSION' の以前の定義を確認してください
+  camera.cpp
+  debugproc.cpp
+C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\debugproc.cpp(68,22): warning C4838: 'float' から 'LONG' への変換には縮小変換が必要です
+C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\debugproc.cpp(68,22): warning C4244: '初期化中': 'float' から 'LONG' への変換です。データが失われる可能性があります。
+C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\debugproc.cpp(68,36): warning C4838: 'float' から 'LONG' への変換には縮小変換が必要です
+C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\debugproc.cpp(68,36): warning C4244: '初期化中': 'float' から 'LONG' への変換です。データが失われる可能性があります。
+  fade.cpp
+C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\fade.cpp(105,34): warning C4305: '-=': 'double' から 'FLOAT' へ切り詰めます。
+C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\fade.cpp(118,34): warning C4305: '+=': 'double' から 'FLOAT' へ切り詰めます。
+  game.cpp
+  input.cpp
+C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\input.cpp(156,19): warning C4101: 'joykeystroke': ローカル変数は 1 度も使われていません。
+  light.cpp
+  main.cpp
 C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\main.cpp(84,22): warning C4838: 'float' から 'LONG' への変換には縮小変換が必要です
 C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\main.cpp(84,22): warning C4244: '初期化中': 'float' から 'LONG' への変換です。データが失われる可能性があります。
 C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\main.cpp(84,36): warning C4838: 'float' から 'LONG' への変換には縮小変換が必要です
@@ -6,8 +23,14 @@ C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\main.cpp(84,36): w
 C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\main.cpp(153,41): warning C4018: '>=': signed と unsigned の数値を比較しようとしました。
 C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\main.cpp(251,26): warning C4244: '=': 'float' から 'UINT' への変換です。データが失われる可能性があります。
 C:\Users\student\Desktop\test\Locus-of-Memory\Locus_of_Memory\main.cpp(253,27): warning C4244: '=': 'float' から 'UINT' への変換です。データが失われる可能性があります。
+  player.cpp
+  result.cpp
+  title.cpp
+  tutorial.cpp
+  コードを生成中...
 camera.obj : error LNK2019: 未解決の外部シンボル D3DXMatrixLookAtLH が関数 "void __cdecl SetCamera(int)" (?SetCamera@@YAXH@Z) で参照されました
 camera.obj : error LNK2019: 未解決の外部シンボル D3DXMatrixPerspectiveFovLH が関数 "void __cdecl SetCamera(int)" (?SetCamera@@YAXH@Z) で参照されました
+debugproc.obj : error LNK2019: 未解決の外部シンボル D3DXCreateFontA が関数 "void __cdecl InitDebugProc(void)" (?InitDebugProc@@YAXXZ) で参照されました
 input.obj : error LNK2019: 未解決の外部シンボル DirectInput8Create が関数 "long __cdecl InitKeyboard(struct HINSTANCE__ *,struct HWND__ *)" (?InitKeyboard@@YAJPEAUHINSTANCE__@@PEAUHWND__@@@Z) で参照されました
 input.obj : error LNK2019: 未解決の外部シンボル XInputGetState が関数 "void __cdecl UpdateJoypad(void)" (?UpdateJoypad@@YAXXZ) で参照されました
 input.obj : error LNK2019: 未解決の外部シンボル XInputSetState が関数 "void __cdecl SetJoypadVibration(int,int,int,int)" (?SetJoypadVibration@@YAXHHHH@Z) で参照されました
@@ -19,7 +42,6 @@ input.obj : error LNK2001: 外部シンボル c_dfDIMouse は未解決です
 input.obj : error LNK2001: 外部シンボル c_dfDIKeyboard は未解決です
 light.obj : error LNK2019: 未解決の外部シンボル D3DXVec3Normalize が関数 "void __cdecl InitLight(void)" (?InitLight@@YAXXZ) で参照されました
 main.obj : error LNK2001: 外部シンボル D3DXVec3Normalize は未解決です
-main.obj : error LNK2019: 未解決の外部シンボル _CrtSetDbgFlag が関数 WinMain で参照されました
 main.obj : error LNK2019: 未解決の外部シンボル Direct3DCreate9 が関数 "long __cdecl Init(struct HINSTANCE__ *,struct HWND__ *,int)" (?Init@@YAJPEAUHINSTANCE__@@PEAUHWND__@@H@Z) で参照されました
 player.obj : error LNK2019: 未解決の外部シンボル D3DXMatrixMultiply が関数 "void __cdecl DrawPlayer(void)" (?DrawPlayer@@YAXXZ) で参照されました
 player.obj : error LNK2019: 未解決の外部シンボル D3DXMatrixTranslation が関数 "void __cdecl DrawPlayer(void)" (?DrawPlayer@@YAXXZ) で参照されました
