@@ -123,6 +123,7 @@ void UpdateCamera(void)
 			pCamera->posVDest.y += -1.0f;
 		}
 
+#if 0
 		if (GetKeyboardPress(DIK_W) == true)
 		{
 			pCamera->posRDest.x += sinf(pCamera->rot.y) * -5.0f;
@@ -146,7 +147,8 @@ void UpdateCamera(void)
 			pCamera->posRDest.x += sinf(pCamera->rot.y + (D3DX_PI * 0.5f)) * -5.0f;
 			pCamera->posRDest.z += cosf(pCamera->rot.y + (D3DX_PI * 0.5f)) * -5.0f;
 		}
-
+#endif
+		
 		// ’Ž‹“_‚ð–Ú“I’Ž‹“_‚ÉˆÚ“®
 		pCamera->posR.x += (pCamera->posRDest.x - pCamera->posR.x) * CAMERA_INERTIA;
 		pCamera->posR.y += (pCamera->posRDest.y - pCamera->posR.y) * CAMERA_INERTIA;
