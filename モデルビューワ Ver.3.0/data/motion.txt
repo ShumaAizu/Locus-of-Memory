@@ -14,16 +14,16 @@ NUM_MODEL = 10
 #------------------------------------------------------------------------------
 # モデルファイル名
 #------------------------------------------------------------------------------
-MODEL_FILENAME = data/MODEL/AKRmodel/00_body.x		# [0]体
-MODEL_FILENAME = data/MODEL/AKRmodel/01_head.x		# [1]頭
-MODEL_FILENAME = data/MODEL/AKRmodel/02_armR.x		# [2]右腕
-MODEL_FILENAME = data/MODEL/AKRmodel/03_handR.x		# [3]右手
-MODEL_FILENAME = data/MODEL/AKRmodel/04_armL.x		# [4]左腕
-MODEL_FILENAME = data/MODEL/AKRmodel/05_handL.x		# [5]左手
-MODEL_FILENAME = data/MODEL/AKRmodel/06_legR.x		# [6]右腿
-MODEL_FILENAME = data/MODEL/AKRmodel/07_footR.x		# [7]右足
-MODEL_FILENAME = data/MODEL/AKRmodel/08_legL.x		# [8]左腿
-MODEL_FILENAME = data/MODEL/AKRmodel/09_footL.x		# [9]左足
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_body.x		# [0]体
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_head.x		# [1]頭
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_Rarm1.x		# [2]右腕
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_Rhand.x		# [3]右手
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_Rarm2.x		# [4]左腕
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_Rhand.x		# [5]左手
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_Rreg1.x		# [6]右腿
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_Rfoot.x		# [7]右足
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_Rreg2.x		# [8]左腿
+MODEL_FILENAME = data/MODEL/player/Xfiles/player_Rfoot.x		# [9]左足
 
 #------------------------------------------------------------------------------
 # キャラクター情報
@@ -38,7 +38,7 @@ CHARACTERSET
 	PARTSSET
 		INDEX = 0					# 体
 		PARENT = -1					# (親)NULL
-		POS = 0.0 15.0 0.0
+		POS = 0.0 25.0 0.0
 		ROT = 0.0 0.0 0.0
 	END_PARTSSET
 
@@ -80,21 +80,21 @@ CHARACTERSET
 	PARTSSET
 		INDEX = 6					# 右腿
 		PARENT = 0					# (親)体
-		POS = -4.0 0.0 0.0
+		POS = -5.0 -17.0 0.0
 		ROT = 0.0 0.0 0.0
 	END_PARTSSET
 
 	PARTSSET
 		INDEX = 7					# 右足
 		PARENT = 6					# (親)右腿
-		POS = 0.0 -10.0 0.0
-		ROT = 0.0 0.0 0.0
+		POS = 0.5 -12.0 0.0
+		ROT = 180.0 0.0 0.0
 	END_PARTSSET
 
 	PARTSSET
 		INDEX = 8					# 左腿
 		PARENT = 0					# (親)体
-		POS = 4.0 0.0 0.0
+		POS = 0.0 0.0 0.0
 		ROT = 0.0 0.0 0.0
 	END_PARTSSET
 
