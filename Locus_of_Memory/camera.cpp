@@ -38,10 +38,6 @@ CameraInfo g_acameraInfo[] =
 //=============================================================================
 void InitCamera(void)
 {
-	InitPlayer();
-
-	InitLight();
-
 	Camera* pCamera = &g_acamera[0];
 	CameraInfo* pCameraInfo = &g_acameraInfo[0];
 
@@ -71,9 +67,7 @@ void InitCamera(void)
 //=============================================================================
 void UninitCamera(void)
 {
-	UninitPlayer();
 
-	UninitLight();
 }
 
 //=============================================================================
@@ -159,9 +153,6 @@ void UpdateCamera(void)
 		pCamera->posV.y += (pCamera->posVDest.y - pCamera->posV.y) * CAMERA_INERTIA;
 		pCamera->posV.z += (pCamera->posVDest.z - pCamera->posV.z) * CAMERA_INERTIA;
 	}
-	UpdateLight();
-
-	UpdatePlayer();
 }
 
 //=============================================================================
@@ -201,10 +192,6 @@ void SetCamera(int nIdx)
 						
 	// ビューマトリックスの設定
 	pDevice->SetTransform(D3DTS_VIEW, &pCamera->mtxView);
-
-	
-
-	DrawPlayer();
 }
 
 //=============================================================================

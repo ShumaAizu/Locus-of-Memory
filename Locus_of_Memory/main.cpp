@@ -7,7 +7,7 @@
 
 #include "main.h"
 #include "input.h"
-//#include "debugproc.h"
+#include "debugproc.h"
 //#include "sound.h"
 //#include "effect.h"
 //#include "particle.h"
@@ -339,8 +339,8 @@ HRESULT Init(HINSTANCE hInstance, HWND hWnd, BOOL bWindow)
 		return E_FAIL;
 	}
 
-	// カメラの初期化
-	InitCamera();
+	//// カメラの初期化
+	//InitCamera();
 
 	//// ライトの初期化
 	//InitLight();
@@ -348,11 +348,11 @@ HRESULT Init(HINSTANCE hInstance, HWND hWnd, BOOL bWindow)
 	//// サウンドの初期化処理
 	//InitSound(hWnd);
 
-	//// モードの設定
-	//InitFade(g_mode, COLOR_WHITE);
+	// モードの設定
+	InitFade(g_mode);
 
-	//// デバッグ表示の初期化処理
-	//InitDebugProc();
+	// デバッグ表示の初期化処理
+	InitDebugProc();
 
 #ifndef _DEBUG
 	// マウスカーソルを非表示
@@ -375,8 +375,8 @@ void Uninit(void)
 	// マウスの終了処理
 	UninitMouse();
 
-	//// デバッグ表示の終了処理
-	//UninitDebugProc();
+	// デバッグ表示の終了処理
+	UninitDebugProc();
 
 	// カメラの終了処理
 	UninitCamera();
@@ -445,8 +445,8 @@ void Update(void)
 	// マウスの更新処理
 	UpdateMouse();
 
-	//// デバッグ表示の更新処理
-	//UpdateDebugProc();
+	// デバッグ表示の更新処理
+	UpdateDebugProc();
 
 	// カメラの更新処理
 	UpdateCamera();
@@ -536,8 +536,8 @@ void Draw(void)
 
 #ifdef _DEBUG
 
-		//// デバッグ表示の描画処理
-		//DrawDebugProc();
+		// デバッグ表示の描画処理
+		DrawDebugProc();
 
 #endif // _DEBUG
 
