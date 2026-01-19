@@ -16,10 +16,8 @@
 #define NUM_KEY_MAX			(256)		//キーの最大数
 #define NUM_JOYSTROKE_MAX	(38)
 #define JOYKEYSTROKE_START	(0x5800)
-#define NUM_MOUSE_MAX		(3)			// ボタンの最大数
-#define JOYSTICKVALUE_MAX	(32767)		// スティックの値の最大
-#define JOYSTICKVALUE_MIN	(-32768)	// スティックの値の最小
-#define CUSTOM_DEADZONE		(512)		// デッドゾーン
+#define NUM_MOUSE_MAX		(3)				// ボタンの最大数
+#define MAX_JOYPAD			(4)			// ジョイパッドの最大数
 
 //*****************************************************************************
 // ジョイパッドのキーの種類
@@ -50,14 +48,10 @@ typedef enum
 //*****************************************************************************
 typedef enum
 {
-	JOYSTICKL_UP = 0,			// 上(Lスティック)
-	JOYSTICKL_DOWN,				// 下(Lスティック)
-	JOYSTICKL_LEFT,				// 左(Lスティック)
-	JOYSTICKL_RIGHT,			// 右(Lスティック)
-	JOYSTICKR_UP,				// 上(Rスティック)
-	JOYSTICKR_DOWN,				// 下(Rスティック)
-	JOYSTICKR_LEFT,				// 左(Rスティック)
-	JOYSTICKR_RIGHT,			// 右(Rスティック)
+	JOYSTICK_UP = 0,			// 上
+	JOYSTICK_DOWN,				// 下
+	JOYSTICK_LEFT,				// 左
+	JOYSTICK_RIGHT,				// 右
 	JOYSTICK_MAX
 }JOYSTICK;
 
@@ -79,7 +73,7 @@ HRESULT InitKeyboard(HINSTANCE hInstance, HWND hWnd);
 void UninitKeyboard(void);
 void UpdateKeyboard(void);
 bool GetKeyboardPress(int nKey);
-bool GetKeyboardTrigger(int nKey); 
+bool GetKeyboardTrigger(int nKey);
 bool GetKeyboardRelease(int nKey);
 bool GetKeyboardRepeat(int nKey);
 bool GetKeyboardAny(void);
@@ -87,19 +81,15 @@ bool GetKeyboardAny(void);
 HRESULT InitJoypad(void);
 void UninitJoypad(void);
 void UpdateJoypad(void);
-bool GetJoypadPress(JOYKEY key);
-bool GetJoypadTrigger(JOYKEY key);
-bool GetJoypadRelease(JOYKEY key);
-bool GetJoypadRepeat(JOYKEY key);
+bool GetJoypadPress(JOYKEY key, int nIdx);
+bool GetJoypadTrigger(JOYKEY key, int nIdx);
+bool GetJoypadRelease(JOYKEY key, int nIdx);
+bool GetJoypadRepeat(JOYKEY key, int nIdx);
 bool GetJoypadAny(void);
-bool GetJoypadStickLeft(float* pValueH, float* pValueV);
-bool GetJoypadStickLeft(float* pValueH, float* pValueV);
 bool GetJoypadStickPress(JOYSTICK stick);
 bool GetJoypadStickRepeat(JOYSTICK stick);
-void SetJoypadVibration(WORD nLVibration, WORD nRVibration, int nVibCounter);
-XINPUT_STATE *GetJoypadState(void);
-bool GetJoypadStroke(WORD key);
-XINPUT_KEYSTROKE* GetJoypadStroke(void);
+void SetJoypadVibration(int nLVibration, int nRVibration, int nVibCounter, int nIdx);
+XINPUT_STATE* GetJoypadState(void);
 bool GetJoypadControl(void);
 
 HRESULT InitMouse(HWND hWnd);
