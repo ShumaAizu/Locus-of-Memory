@@ -239,17 +239,6 @@ void UpdateJoypad(void)
 		}
 	}
 
-	if (XInputGetKeystroke(0, 0, &joykeystroke) == ERROR_SUCCESS)
-	{
-		for (int nCntKey = 0; nCntKey < NUM_JOYSTROKE_MAX; nCntKey++)
-		{
-			if (joykeystroke.VirtualKey - JOYKEYSTROKE_START == nCntKey)
-			{
-				g_joypadStroke[nCntKey] = joykeystroke;
-			}
-		}
-	}
-
 	// U“®C—¹ˆ—
 	if (g_joypadVibration.wLeftMotorSpeed != NULL || g_joypadVibration.wRightMotorSpeed != NULL)
 	{
