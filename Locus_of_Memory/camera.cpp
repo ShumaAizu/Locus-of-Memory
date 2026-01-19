@@ -10,6 +10,9 @@
 
 //#include "debugproc.h"
 
+// 仮置き
+#include "player.h"
+
 //*****************************************************************************
 // マクロ定義
 //*****************************************************************************
@@ -24,7 +27,7 @@ float fCameraDif;				// カメラの高さ
 CameraInfo g_acameraInfo[] =
 {
 	{INIT_1PCAMERAPOSV, INIT_1PCAMERAPOSR, INIT_POSU, INIT_1PCAMERAROT, INIT_1PVEIWPORT },
-	{INIT_2PCAMERAPOSV, INIT_2PCAMERAPOSR, INIT_POSU, INIT_2PCAMERAROT, INIT_2PVEIWPORT},
+	{INIT_2PCAMERAPOSV, INIT_2PCAMERAPOSR, INIT_POSU, INIT_2PCAMERAROT, INIT_2PVEIWPORT },
 	{INIT_1PCAMERAPOSV, INIT_1PCAMERAPOSR, INIT_POSU, INIT_1PCAMERAROT, INIT_3PVEIWPORT },
 	{INIT_1PCAMERAPOSV, INIT_1PCAMERAPOSR, INIT_POSU, INIT_1PCAMERAROT, INIT_4PVEIWPORT },
 };
@@ -34,6 +37,8 @@ CameraInfo g_acameraInfo[] =
 //=============================================================================
 void InitCamera(void)
 {
+	InitPlayer();
+
 	Camera* pCamera = &g_acamera[0];
 	CameraInfo* pCameraInfo = &g_acameraInfo[0];
 
@@ -63,7 +68,7 @@ void InitCamera(void)
 //=============================================================================
 void UninitCamera(void)
 {
-
+	UninitPlayer();
 }
 
 //=============================================================================
@@ -147,6 +152,8 @@ void UpdateCamera(void)
 		pCamera->posV.y += (pCamera->posVDest.y - pCamera->posV.y) * CAMERA_INERTIA;
 		pCamera->posV.z += (pCamera->posVDest.z - pCamera->posV.z) * CAMERA_INERTIA;
 	}
+
+	UpdatePlayer();
 }
 
 //=============================================================================
@@ -186,6 +193,8 @@ void SetCamera(int nIdx)
 						
 	// ビューマトリックスの設定
 	pDevice->SetTransform(D3DTS_VIEW, &pCamera->mtxView);
+
+	DrawPlayer();
 }
 
 //=============================================================================
