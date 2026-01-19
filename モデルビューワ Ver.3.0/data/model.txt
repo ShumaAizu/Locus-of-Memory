@@ -24,13 +24,15 @@ TEXTURE_FILENAME = data/TEXTURE/grass000.png		# [5]草テクスチャ
 #------------------------------------------------------------------------------
 # モデル数
 #------------------------------------------------------------------------------
-NUM_MODEL = 1
+NUM_MODEL = 4
 
 #------------------------------------------------------------------------------
 # モデルファイル名
 #------------------------------------------------------------------------------
-MODEL_FILENAME = data/MODEL/wall500.x		# [0]壁
-
+MODEL_FILENAME = data/MODEL/castle/castle.x		# [0]城
+MODEL_FILENAME = data/MODEL/house/house.x       # [1]家
+MODEL_FILENAME = data/MODEL/shop/X/shop000.x		# [2]店1号
+MODEL_FILENAME = data/MODEL/shop/X/shop001.x		# [3]店2号
 #------------------------------------------------------------------------------
 # カメラ情報
 #------------------------------------------------------------------------------
@@ -66,13 +68,6 @@ SKYSET
 END_SKYSET
 
 #------------------------------------------------------------------------------
-# 山情報
-#------------------------------------------------------------------------------
-MOUNTAINSET
-	TEXTYPE = 1
-END_MOUNTAINSET
-
-#------------------------------------------------------------------------------
 # 地面情報
 #------------------------------------------------------------------------------
 FIELDSET
@@ -80,166 +75,76 @@ FIELDSET
 	POS = 0 0 0
 	ROT = 0 0 0
 	BLOCK = 16 16
-	SIZE = 80 80
+	SIZE = 600 600
 END_FIELDSET
 
-FIELDSET
-	TEXTYPE = 2
-	POS = -1280 -80 0
-	ROT = 0 0 0
-	BLOCK = 16 16
-	SIZE = 80 80
-END_FIELDSET
-
-FIELDSET
-	TEXTYPE = 2
-	POS = 0 80 0
-	ROT = 0 45 0
-	BLOCK = 4 4
-	SIZE = 80 80
-END_FIELDSET
-
-#------------------------------------------------------------------------------
-# 壁情報
-#------------------------------------------------------------------------------
-WALLSET
-	TEXTYPE = 3
-	POS = 0 -80 640
-	ROT = 0 180 0
-	BLOCK = 16 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = 640 -80 0
-	ROT = 0 270 0
-	BLOCK = 16 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = 0 -80 -640
-	ROT = 0 0 0
-	BLOCK = 16 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = -640 -80 0
-	ROT = 0 90 0
-	BLOCK = 16 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = -1280 -160 640
-	ROT = 0 180 0
-	BLOCK = 16 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = -1920 -160 0
-	ROT = 0 90 0
-	BLOCK = 16 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = -1280 -160 -640
-	ROT = 0 0 0
-	BLOCK = 16 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = -113.137 0 113.137
-	ROT = 0 135 0
-	BLOCK = 4 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = 113 0 113.137
-	ROT = 0 225 0
-	BLOCK = 4 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = 113.137 0 -113.137
-	ROT = 0 315 0
-	BLOCK = 4 1
-	SIZE = 80 80
-END_WALLSET
-
-WALLSET
-	TEXTYPE = 3
-	POS = -113.137 0 -113.137
-	ROT = 0 45 0
-	BLOCK = 4 1
-	SIZE = 80 80
-END_WALLSET
 
 #------------------------------------------------------------------------------
 # モデル配置情報
 #------------------------------------------------------------------------------
 MODELSET
 	TYPE = 0
-	POS = 300 0 300
+	POS = 0 0 0
 	ROT = 0 45 0
 	SHADOW = 0
 END_MODELSET
 
 MODELSET
-	TYPE = 0
-	POS = 300 0 -300
-	ROT = 0 315 0
+	TYPE = 1
+	POS = -600 0 -1308
+	ROT = -1.56 0 0
 	SHADOW = 0
 END_MODELSET
 
 MODELSET
-	TYPE = 0
-	POS = -300 0 -300
-	ROT = 0 225 0
+	TYPE = 1
+	POS = 394 0 -851
+	ROT = -1.56 0 0
 	SHADOW = 0
 END_MODELSET
 
 MODELSET
-	TYPE = 0
-	POS = -300 0 300
-	ROT = 0 135 0
+	TYPE = 1
+	POS = -294 0 -624
+	ROT = -1.45 0 0
 	SHADOW = 0
 END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = -355 0 -2004
+	ROT = -1.64 0 0
+	SHADOW = 0
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = 756 0 -2321
+	ROT = 0 180 0
+	SHADOW = 0
+END_MODELSET
+
+
+MODELSET
+	TYPE = 2
+	POS = 399 0 -1540
+	ROT = 0 90 0
+	SHADOW = 0
+END_MODELSET
+
 
 #------------------------------------------------------------------------------
 # ビルボード配置情報
 #------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
-# 草配置情報
-#------------------------------------------------------------------------------
-GRASSSET
-TEXTYPE = 5
-POS = 0 0 400
-RANGE = 160 160
-NUM = 200
-SIZE = 20 100
-END_GRASSSET
-
-#------------------------------------------------------------------------------
 # プレイヤー情報
 #------------------------------------------------------------------------------
-
+PLAYERSET
+	MOTION_FILENAME = data/motion.txt
+	POS = 145 0 -4700
+	ROT = 0 0 0
+	END_PLAYERSET
 
 
 END_SCRIPT		# この行は絶対消さないこと！
