@@ -24,16 +24,17 @@ TEXTURE_FILENAME = data/TEXTURE/grass000.png		# [5]草テクスチャ
 #------------------------------------------------------------------------------
 # モデル数
 #------------------------------------------------------------------------------
-NUM_MODEL = 5
+NUM_MODEL = 6
 
 #------------------------------------------------------------------------------
 # モデルファイル名
 #------------------------------------------------------------------------------
 MODEL_FILENAME = data/MODEL/castle/castle.x		# [0]城
 MODEL_FILENAME = data/MODEL/house/house.x       # [1]家
-MODEL_FILENAME = data/MODEL/shop/X/shop000.x		# [2]店1号
-MODEL_FILENAME = data/MODEL/shop/X/shop001.x		# [3]店2号
-MODEL_FILENAME = data/MODEL/streetlight/siro.x		# [4]城(仮)
+MODEL_FILENAME = data/MODEL/shop/X/shop000.x	# [2]店1号
+MODEL_FILENAME = data/MODEL/shop/X/shop001.x	# [3]店2号
+MODEL_FILENAME = data/MODEL/streetlight/siro.x	# [4]城(仮)
+MODEL_FILENAME = data/MODEL/house/house2.x       # [5]家2(仮)
 #------------------------------------------------------------------------------
 # カメラ情報
 #------------------------------------------------------------------------------
@@ -76,7 +77,7 @@ FIELDSET
 	POS = 0 0 0
 	ROT = 0 0 0
 	BLOCK = 16 16
-	SIZE = 600 600
+	SIZE = 700 700
 END_FIELDSET
 
 
@@ -86,36 +87,41 @@ END_FIELDSET
 MODELSET
 	TYPE = 1
 	POS = 0 0 0
-	ROT = 0 90 0
+	ROT = 0 0 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = -600 0 -1308
-	ROT = -1.56 0 0
+	POS = -328 0 -1878
+	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
 	TYPE = 1
 	POS = 394 0 -851
-	ROT = -1.56 0 0
+	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = -294 0 -624
-	ROT = -1.45 0 0
+	POS = -325 0 -1109
+	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = -355 0 -2004
-	ROT = -1.64 0 0
+	POS = -268 0 -2240
+	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -123,6 +129,7 @@ MODELSET
 	POS = 756 0 -2321
 	ROT = 0 180 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -137,6 +144,7 @@ MODELSET
 	POS = 1690 0 -2130
 	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -144,6 +152,7 @@ MODELSET
 	POS = 2173 0 -1700
 	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -151,6 +160,7 @@ MODELSET
 	POS = 776 0 -1740
 	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -158,6 +168,7 @@ MODELSET
 	POS = 1175 0 -1740
 	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -165,6 +176,7 @@ MODELSET
 	POS = 953 0 -1440
 	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -172,6 +184,7 @@ MODELSET
 	POS = 928 0 -865
 	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -179,6 +192,7 @@ MODELSET
 	POS = 2155 0 -1170
 	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -186,6 +200,7 @@ MODELSET
 	POS = 2087 0 -761
 	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -193,6 +208,7 @@ MODELSET
 	POS = 1874 0 -357
 	ROT = 0 0 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -200,13 +216,15 @@ MODELSET
 	POS = -818 0 -3269
 	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = -1295 0 -3139
-	ROT = 0 90 0
+	POS = -1295 0 -3239
+	ROT = 0 0 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -214,34 +232,39 @@ MODELSET
 	POS = -796 0 -2675
 	ROT = 0 180 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = -1224 0 -2324
-	ROT = 0 -180 0
-	SHADOW = 0
-END_MODELSET
-
-MODELSET
-	TYPE = 1
-	POS = -1216 0 -1516
+	POS = -1596 0 -2875
 	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = -1433 0 -1039
-	ROT = 0 -180 0
+	POS = -1767 0 -2415
+	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = -916 0 -775
+	POS = -1433 0 -849
 	ROT = 0 -180 0
 	SHADOW = 0
+	COLLISION = 1
+END_MODELSET
+
+MODELSET
+	TYPE = 1
+	POS = -623 0 -790
+	ROT = 0 -180 0
+	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -249,6 +272,7 @@ MODELSET
 	POS = 474 0 144
 	ROT = 0 0 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -256,6 +280,7 @@ MODELSET
 	POS = 1017 0 145
 	ROT = 0 0 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -263,6 +288,7 @@ MODELSET
 	POS = 1436 0 347
 	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -270,6 +296,7 @@ MODELSET
 	POS = 1451 0 1063
 	ROT = 0 180 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -277,6 +304,7 @@ MODELSET
 	POS = 1055 0 1004
 	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -284,6 +312,7 @@ MODELSET
 	POS = 680 0 1252
 	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -291,13 +320,15 @@ MODELSET
 	POS = 399 0 -1540
 	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
 	TYPE = 2
-	POS = -859 0 -1827
+	POS = -1686 0 -1520
 	ROT = 0 90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -305,6 +336,7 @@ MODELSET
 	POS = -274 0 -2858
 	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -312,6 +344,7 @@ MODELSET
 	POS = 1510 0 -900
 	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -319,6 +352,7 @@ MODELSET
 	POS = 1962 0 800
 	ROT = 0 -90 0
 	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 MODELSET
@@ -326,6 +360,15 @@ MODELSET
 	POS = 110 0 4100
 	ROT = 0 0 0
 	SHADOW = 0
+	COLLISION = 1
+END_MODELSET
+
+MODELSET
+	TYPE = 5
+	POS = -1769 0 -1996
+	ROT = 0 90 0
+	SHADOW = 0
+	COLLISION = 1
 END_MODELSET
 
 #------------------------------------------------------------------------------
