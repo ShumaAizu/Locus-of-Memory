@@ -489,6 +489,8 @@ void Update(void)
 //===============================================================================
 void Draw(void)
 {
+	D3DVIEWPORT9 viewportDef;	// ビューポート保管変数
+
 	// 画面クリア(バックバッファとZバッファのクリア)
 	g_pD3DDevice->Clear(0, NULL,
 		(D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER),
@@ -499,6 +501,9 @@ void Draw(void)
 	{// 描画開始が成功した場合
 		for (int nCntCamera = 0; nCntCamera < MAX_CAMERA; nCntCamera++)
 		{
+			// 現在のビューポートの取得
+			g_pD3DDevice->GetViewport(&viewportDef);
+
 			// カメラの設定処理
 			SetCamera(nCntCamera);
 
@@ -529,10 +534,14 @@ void Draw(void)
 			//	DrawRanking();
 			//	break;
 			}
+
+			// フェードの描画処理
+			DrawFade();
+
+			// ビューポートを元に戻す
+			g_pD3DDevice->SetViewport(&viewportDef);
 		}
 
-		// フェードの描画処理
-		DrawFade();
 
 #ifdef _DEBUG
 

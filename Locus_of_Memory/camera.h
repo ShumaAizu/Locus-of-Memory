@@ -15,20 +15,20 @@
 //*****************************************************************************
 #define CAMERAPOSR_DIS		(200.0f)									// 視点と注視点との距離
 #define CAMERA_INERTIA		(0.115f)									// カメラ移動の慣性係数
-#define MAX_CAMERA			(1)											// カメラの最大数
+#define MAX_CAMERA			(2)											// カメラの最大数
 
 // 各種初期値
 #define INIT_POSU			(D3DXVECTOR3(0.0f, 1.0f, 0.0f))				// カメラの上方向ベクトル
 #define INIT_1PCAMERAPOSV	(D3DXVECTOR3(-100.0f, 100.0f, 200.0f))		// 1Pカメラの視点
 #define INIT_1PCAMERAPOSR	(D3DXVECTOR3(0.0f, 50.0f, 0.0f))			// 1Pカメラの注視点
 #define INIT_1PCAMERAROT	(D3DXVECTOR3(0.0f, D3DX_PI, 0.0f))			// 1Pカメラの向き
-#define INIT_2PCAMERAPOSV	(D3DXVECTOR3(100.0f, 100.0f, 200.0f))		// 2Pカメラの視点
+#define INIT_2PCAMERAPOSV	(D3DXVECTOR3(-100.0f, 100.0f, 200.0f))		// 2Pカメラの視点
 #define INIT_2PCAMERAPOSR	(D3DXVECTOR3(0.0f, 50.0f, 0.0f))			// 2Pカメラの注視点
 #define INIT_2PCAMERAROT	(D3DXVECTOR3(0.0f, D3DX_PI, 0.0f))			// 2Pカメラの向き
 
 // ビューポート生成用マクロ
 #define INIT_1PVEIWPORT		(SetViewPort((DWORD)0.0f, (DWORD)0.0f, (DWORD)(SCREEN_WIDTH / MAX_CAMERA), (DWORD)(SCREEN_HEIGHT)))
-#define INIT_2PVEIWPORT		(SetViewPort((DWORD)(SCREEN_WIDTH / 2), (DWORD)0.0f, (DWORD)(SCREEN_WIDTH / 2), (DWORD)(SCREEN_HEIGHT / 2)))
+#define INIT_2PVEIWPORT		(SetViewPort((DWORD)(SCREEN_WIDTH / 2), (DWORD)0.0f, (DWORD)(SCREEN_WIDTH / 2), (DWORD)(SCREEN_HEIGHT)))
 #define INIT_3PVEIWPORT		(SetViewPort((DWORD)0.0f, (DWORD)(SCREEN_HEIGHT / 2), (DWORD)(SCREEN_WIDTH / 2), (DWORD)(SCREEN_HEIGHT / 2)))
 #define INIT_4PVEIWPORT		(SetViewPort((DWORD)(SCREEN_WIDTH / 2), (DWORD)(SCREEN_HEIGHT / 2), (DWORD)(SCREEN_WIDTH / 2), (DWORD)(SCREEN_HEIGHT / 2)))
 
