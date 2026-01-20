@@ -138,13 +138,13 @@ void UninitPlayer(void)
 //========================================================================
 void UpdatePlayer(void)
 {
-	Camera* pCamera = GetCamera();
-	// スティックの角度を取得
-	float fRotDiffKey = 0.0f;	// キー入力時の角度補正計算用
-	float fRotDiffPad = 0.0f;	// ジョイパッド入力時の角度補正計算用
-
-	// キーボード操作[1P] / WASD
-	if (g_player[0].bUse == true)
+	//Camera* pCamera = GetCamera();
+	//// スティックの角度を取得
+	//float fRotDiffKey = 0.0f;	// キー入力時の角度補正計算用
+	//float fRotDiffPad = 0.0f;	// ジョイパッド入力時の角度補正計算用
+	//
+	//// キーボード操作[1P] / WASD
+	//if (g_player[0].bUse == true)
 	{
 		// プレイヤーの移動を管理
 		if (GetKeyboardPress(DIK_A) == true)	// 右に移動
@@ -234,9 +234,9 @@ void UpdatePlayer(void)
 			g_player[0].rotDest.y = pCamera->rot.y + D3DX_PI;
 		}
 	}
-
-	// キーボード操作[2P] / IJKL
-	if (g_player[1].bUse == true)
+	//
+	//// キーボード操作[2P] / IJKL
+	//if (g_player[1].bUse == true)
 	{
 		// プレイヤーの移動を管理
 		if (GetKeyboardPress(DIK_J) == true)	// 右に移動
@@ -326,9 +326,9 @@ void UpdatePlayer(void)
 			g_player[1].rotDest.y = pCamera->rot.y + D3DX_PI;
 		}
 	}
-
-	// ジョイパッド[十字キー]操作
-	for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
+	//
+	//// ジョイパッド[十字キー]操作
+	//for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
 	{
 		if (g_player[nCntPlayer].bUse == true)
 		{
@@ -421,9 +421,9 @@ void UpdatePlayer(void)
 			}
 		}
 	}
-
-	// プレイヤーの方向を補正
-	for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
+	//
+	//// プレイヤーの方向を補正
+	//for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
 	{
 		if (g_player[nCntPlayer].bUse == true)
 		{
