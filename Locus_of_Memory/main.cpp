@@ -499,7 +499,7 @@ void Draw(void)
 	// 描画開始
 	if (SUCCEEDED(g_pD3DDevice->BeginScene()))
 	{// 描画開始が成功した場合
-		for (int nCntCamera = 0; nCntCamera < MAX_CAMERA; nCntCamera++)
+		for (int nCntCamera = 0; nCntCamera < GetNumCamera(); nCntCamera++)
 		{
 			// 現在のビューポートの取得
 			g_pD3DDevice->GetViewport(&viewportDef);
@@ -628,6 +628,8 @@ void SetMode(MODE mode)
 	//	InitRanking();
 	//	break;
 	}
+
+	SetNumCamera(mode);
 
 	// モードの更新
 	g_mode = mode;

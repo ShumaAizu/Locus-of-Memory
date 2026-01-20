@@ -7,6 +7,7 @@
 
 #include "camera.h"
 #include "input.h"
+#include "title.h"
 
 #include "debugproc.h"
 
@@ -18,7 +19,7 @@
 // グローバル変数
 //*****************************************************************************
 Camera g_acamera[MAX_CAMERA];	// カメラの情報
-float fCameraDif;				// カメラの高さ
+int g_nNumCamera = 0;			// カメラの数
 
 // カメラの情報格納用
 CameraInfo g_acameraInfo[] =
@@ -56,6 +57,8 @@ void InitCamera(void)
 		pCamera->posVDest.z = pCamera->posRDest.z + cosf(pCamera->rot.y) * CAMERAPOSR_DIS;
 		pCamera->posVDest.x = pCamera->posRDest.x + sinf(pCamera->rot.y) * CAMERAPOSR_DIS;
 	}
+
+	g_nNumCamera = INIT_NUMCAMERA;
 }
 
 //=============================================================================
@@ -196,6 +199,53 @@ void SetCamera(int nIdx)
 Camera *GetCamera(void)
 {
 	return &g_acamera[0];
+}
+
+//=============================================================================
+//	カメラの数設定処理
+//=============================================================================
+void SetNumCamera(MODE mode)
+{
+	Camera* pCamera = &g_acamera[0];
+	CameraInfo* pCameraInfo = &g_acameraInfo[0];
+
+	g_nNumCamera = INIT_NUMCAMERA;
+	pCamera->viewport = DEFAULT_VEIWPORT;
+
+	if (mode == MODE_GAME || mode == MODE_TUTORIAL)
+	{
+		OPERATIONTYPE operationtype = GetOperationType();		// 今の操作タイプ
+		if(operationtype == OPERATIONTYPE_2P)
+		{// 2Pプレイだったら
+			g_nNumCamera = CAMERA_2PPLAY;
+			for (int nCntCamera = 0; nCntCamera < g_nNumCamera; nCntCamera++, pCamera++, pCameraInfo++)
+			{// カメラに予め用意した初期値を代入
+				// カメラの位置設定
+				pCamera->posV = pCameraInfo->posV;
+				pCamera->posR = pCameraInfo->posR;
+				pCamera->vecU = pCameraInfo->vecU;
+				pCamera->rot = pCameraInfo->rot;
+
+				pCamera->viewport = pCameraInfo->viewport;		// ビューポート設定
+
+				// 目的位置
+				pCamera->posVDest = pCameraInfo->posV;
+				pCamera->posRDest = pCameraInfo->posR;
+
+				// 距離を離す
+				pCamera->posVDest.z = pCamera->posRDest.z + cosf(pCamera->rot.y) * CAMERAPOSR_DIS;
+				pCamera->posVDest.x = pCamera->posRDest.x + sinf(pCamera->rot.y) * CAMERAPOSR_DIS;
+			}
+		}
+	}
+}
+
+//=============================================================================
+//	カメラの数取得処理
+//=============================================================================
+int GetNumCamera(void)
+{
+	return g_nNumCamera;
 }
 
 //=============================================================================
