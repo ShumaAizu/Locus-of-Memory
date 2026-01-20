@@ -170,7 +170,6 @@
     </ClCompile>
     <ClCompile Include="player.cpp" />
     <ClCompile Include="result.cpp" />
-    <ClCompile Include="title.cpp" />
     <ClCompile Include="tutorial.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -184,7 +183,6 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="result.h" />
-    <ClInclude Include="title.h" />
     <ClInclude Include="tutorial.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
