@@ -13,87 +13,141 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{cad07cf5-e104-45e6-bbc5-fe53eb3f4d11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\cpp">
+      <UniqueIdentifier>{15c702e4-d04b-41b3-b357-ff29f0ba3c0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\h">
+      <UniqueIdentifier>{cbd1d22b-01ef-450a-96cb-bf1634cbbc6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="title">
+      <UniqueIdentifier>{5ad73804-26f5-4b7a-b22c-455e05aaaf96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="title\cpp">
+      <UniqueIdentifier>{57605b82-91bf-4be7-a7ed-b414ff74ec86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="title\h">
+      <UniqueIdentifier>{1b1e5e77-7de2-40c5-9954-93378634d1ff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{0dba3bec-3689-4fe1-a14a-f7cd53535e3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\cpp">
+      <UniqueIdentifier>{490483f2-3924-4ee1-af86-a69caa1c345c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main\h">
+      <UniqueIdentifier>{6c697ef1-42dc-4206-96de-26ce775ca7b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="result">
+      <UniqueIdentifier>{81c8aae7-5c09-4881-b807-1f060a792573}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="result\cpp">
+      <UniqueIdentifier>{eedc9ca6-451d-4c2e-b911-7b33cdfd28c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="result\h">
+      <UniqueIdentifier>{3a9ac687-f870-4278-9059-020901306256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tutorial">
+      <UniqueIdentifier>{b7729b8b-53e7-4363-a06d-dd16a03aa7cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tutorial\cpp">
+      <UniqueIdentifier>{0b632100-46d3-4557-97ec-35e8bf3747a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tutorial\h">
+      <UniqueIdentifier>{c4586c72-149c-4d10-9148-31ec051e509e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object">
+      <UniqueIdentifier>{4082caad-2f77-4036-a768-788ab7941aed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object\cpp">
+      <UniqueIdentifier>{1fc455d9-3e30-406a-9346-b691a10c912a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="object\h">
+      <UniqueIdentifier>{73ec0651-9a45-43af-b96f-a5e4af2be307}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="input.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="pch.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="camera.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="light.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="fade.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="game.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="result.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="tutorial.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="debugproc.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>game\cpp</Filter>
     </ClCompile>
     <ClCompile Include="title.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>title\cpp</Filter>
     </ClCompile>
     <ClCompile Include="titleui.cpp">
-      <Filter>ソース ファイル</Filter>
+      <Filter>title\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="debugproc.cpp">
+      <Filter>main\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="fade.cpp">
+      <Filter>main\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="input.cpp">
+      <Filter>main\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>main\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.cpp">
+      <Filter>main\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="result.cpp">
+      <Filter>result\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="tutorial.cpp">
+      <Filter>tutorial\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>object\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="light.cpp">
+      <Filter>object\cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>object\cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="input.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="main.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="light.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="fade.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="game.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="result.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="tutorial.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="debugproc.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>game\h</Filter>
     </ClInclude>
     <ClInclude Include="title.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>title\h</Filter>
     </ClInclude>
     <ClInclude Include="titleui.h">
-      <Filter>ヘッダー ファイル</Filter>
+      <Filter>title\h</Filter>
+    </ClInclude>
+    <ClInclude Include="debugproc.h">
+      <Filter>main\h</Filter>
+    </ClInclude>
+    <ClInclude Include="fade.h">
+      <Filter>main\h</Filter>
+    </ClInclude>
+    <ClInclude Include="input.h">
+      <Filter>main\h</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>main\h</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>main\h</Filter>
+    </ClInclude>
+    <ClInclude Include="result.h">
+      <Filter>result\h</Filter>
+    </ClInclude>
+    <ClInclude Include="tutorial.h">
+      <Filter>tutorial\h</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>object\h</Filter>
+    </ClInclude>
+    <ClInclude Include="light.h">
+      <Filter>object\h</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>object\h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -8,11 +8,7 @@
 #include "camera.h"
 #include "input.h"
 
-//#include "debugproc.h"
-
-// 仮置き
-#include "player.h"
-#include "light.h"
+#include "debugproc.h"
 
 //*****************************************************************************
 // マクロ定義
