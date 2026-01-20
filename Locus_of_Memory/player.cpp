@@ -138,60 +138,60 @@ void UninitPlayer(void)
 //========================================================================
 void UpdatePlayer(void)
 {
-	//Camera* pCamera = GetCamera();
-	//// スティックの角度を取得
-	//float fRotDiffKey = 0.0f;	// キー入力時の角度補正計算用
-	//float fRotDiffPad = 0.0f;	// ジョイパッド入力時の角度補正計算用
-	//
-	//// キーボード操作[1P] / WASD
-	//if (g_player[0].bUse == true)
+	Camera* pCamera = GetCamera();
+	// スティックの角度を取得
+	float fRotDiffKey = 0.0f;	// キー入力時の角度補正計算用
+	float fRotDiffPad = 0.0f;	// ジョイパッド入力時の角度補正計算用
+	
+	// キーボード操作[1P] / WASD
+	if (g_player[0].bUse == true)
 	{
 		// プレイヤーの移動を管理
 		if (GetKeyboardPress(DIK_A) == true)	// 右に移動
 		{
 			if (GetKeyboardPress(DIK_W) == true)	// 奥に移動
 			{
-				g_player[0].move.x -= sinf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
-				g_player[0].move.z -= cosf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
+				g_player[0].move.x -= sinf(pCamera[0].rot.y - D3DX_PI / 4) * MOVE;
+				g_player[0].move.z -= cosf(pCamera[0].rot.y - D3DX_PI / 4) * MOVE;
 			}
 			else if (GetKeyboardPress(DIK_S) == true)	// 手前に移動
 			{
-				g_player[0].move.x += sinf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
-				g_player[0].move.z += cosf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
+				g_player[0].move.x += sinf(pCamera[0].rot.y + D3DX_PI / 4) * MOVE;
+				g_player[0].move.z += cosf(pCamera[0].rot.y + D3DX_PI / 4) * MOVE;
 			}
 			else
 			{
-				g_player[0].move.x += cosf(pCamera->rot.y) * MOVE;
-				g_player[0].move.z -= sinf(pCamera->rot.y) * MOVE;
+				g_player[0].move.x += cosf(pCamera[0].rot.y) * MOVE;
+				g_player[0].move.z -= sinf(pCamera[0].rot.y) * MOVE;
 			}
 		}
 		else if (GetKeyboardPress(DIK_D) == true)	// 左に移動
 		{
 			if (GetKeyboardPress(DIK_W) == true)	// 奥に移動
 			{
-				g_player[0].move.x -= cosf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
-				g_player[0].move.z += sinf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
+				g_player[0].move.x -= cosf(pCamera[0].rot.y - D3DX_PI / 4) * MOVE;
+				g_player[0].move.z += sinf(pCamera[0].rot.y - D3DX_PI / 4) * MOVE;
 			}
 			else if (GetKeyboardPress(DIK_S) == true)	// 手前に移動
 			{
-				g_player[0].move.x -= cosf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
-				g_player[0].move.z += sinf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
+				g_player[0].move.x -= cosf(pCamera[0].rot.y + D3DX_PI / 4) * MOVE;
+				g_player[0].move.z += sinf(pCamera[0].rot.y + D3DX_PI / 4) * MOVE;
 			}
 			else
 			{
-				g_player[0].move.x -= cosf(pCamera->rot.y) * MOVE;
-				g_player[0].move.z += sinf(pCamera->rot.y) * MOVE;
+				g_player[0].move.x -= cosf(pCamera[0].rot.y) * MOVE;
+				g_player[0].move.z += sinf(pCamera[0].rot.y) * MOVE;
 			}
 		}
 		else if (GetKeyboardPress(DIK_W) == true)	// 奥に移動
 		{
-			g_player[0].move.x -= sinf(pCamera->rot.y) * MOVE;
-			g_player[0].move.z -= cosf(pCamera->rot.y) * MOVE;
+			g_player[0].move.x -= sinf(pCamera[0].rot.y) * MOVE;
+			g_player[0].move.z -= cosf(pCamera[0].rot.y) * MOVE;
 		}
 		else if (GetKeyboardPress(DIK_S) == true)	// 手前に移動
 		{
-			g_player[0].move.x += sinf(pCamera->rot.y) * MOVE;
-			g_player[0].move.z += cosf(pCamera->rot.y) * MOVE;
+			g_player[0].move.x += sinf(pCamera[0].rot.y) * MOVE;
+			g_player[0].move.z += cosf(pCamera[0].rot.y) * MOVE;
 		}
 
 		// プレイヤーの向きを設定
@@ -199,91 +199,90 @@ void UpdatePlayer(void)
 		{
 			if (GetKeyboardPress(DIK_W) == true)	// 奥に移動
 			{
-				g_player[0].rotDest.y = pCamera->rot.y - D3DX_PI / 2 + D3DX_PI / 4;
+				g_player[0].rotDest.y = pCamera[0].rot.y - D3DX_PI / 2 + D3DX_PI / 4;
 			}
 			else if (GetKeyboardPress(DIK_S) == true)	// 手前に移動
 			{
-				g_player[0].rotDest.y = pCamera->rot.y - D3DX_PI / 2 - D3DX_PI / 4;
+				g_player[0].rotDest.y = pCamera[0].rot.y - D3DX_PI / 2 - D3DX_PI / 4;
 			}
 			else
 			{
-				g_player[0].rotDest.y = pCamera->rot.y - D3DX_PI / 2;
+				g_player[0].rotDest.y = pCamera[0].rot.y - D3DX_PI / 2;
 			}
 		}
 		else if (GetKeyboardPress(DIK_D) == true)	// 左に移動
 		{
 			if (GetKeyboardPress(DIK_W) == true)	// 奥に移動
 			{
-				g_player[0].rotDest.y = pCamera->rot.y + D3DX_PI / 2 - D3DX_PI / 4;
+				g_player[0].rotDest.y = pCamera[0].rot.y + D3DX_PI / 2 - D3DX_PI / 4;
 			}
 			else if (GetKeyboardPress(DIK_S) == true)	// 手前に移動
 			{
-				g_player[0].rotDest.y = pCamera->rot.y + D3DX_PI / 2 + D3DX_PI / 4;
+				g_player[0].rotDest.y = pCamera[0].rot.y + D3DX_PI / 2 + D3DX_PI / 4;
 			}
 			else
 			{
-				g_player[0].rotDest.y = pCamera->rot.y + D3DX_PI / 2;
+				g_player[0].rotDest.y = pCamera[0].rot.y + D3DX_PI / 2;
 			}
 		}
 		else if (GetKeyboardPress(DIK_W) == true)	// 奥に移動
 		{
-			g_player[0].rotDest.y = pCamera->rot.y;
+			g_player[0].rotDest.y = pCamera[0].rot.y;
 		}
 		else if (GetKeyboardPress(DIK_S) == true)	// 手前に移動
 		{
-			g_player[0].rotDest.y = pCamera->rot.y + D3DX_PI;
+			g_player[0].rotDest.y = pCamera[0].rot.y + D3DX_PI;
 		}
 	}
-	//
-	//// キーボード操作[2P] / IJKL
-	//if (g_player[1].bUse == true)
+	// キーボード操作[2P] / IJKL
+	if (g_player[1].bUse == true)
 	{
 		// プレイヤーの移動を管理
 		if (GetKeyboardPress(DIK_J) == true)	// 右に移動
 		{
 			if (GetKeyboardPress(DIK_I) == true)	// 奥に移動
 			{
-				g_player[1].move.x -= sinf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
-				g_player[1].move.z -= cosf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
+				g_player[1].move.x -= sinf(pCamera[1].rot.y - D3DX_PI / 4) * MOVE;
+				g_player[1].move.z -= cosf(pCamera[1].rot.y - D3DX_PI / 4) * MOVE;
 			}
 			else if (GetKeyboardPress(DIK_K) == true)	// 手前に移動
 			{
-				g_player[1].move.x += sinf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
-				g_player[1].move.z += cosf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
+				g_player[1].move.x += sinf(pCamera[1].rot.y + D3DX_PI / 4) * MOVE;
+				g_player[1].move.z += cosf(pCamera[1].rot.y + D3DX_PI / 4) * MOVE;
 			}
 			else
 			{
-				g_player[1].move.x += cosf(pCamera->rot.y) * MOVE;
-				g_player[1].move.z -= sinf(pCamera->rot.y) * MOVE;
+				g_player[1].move.x += cosf(pCamera[1].rot.y) * MOVE;
+				g_player[1].move.z -= sinf(pCamera[1].rot.y) * MOVE;
 			}
 		}
 		else if (GetKeyboardPress(DIK_L) == true)	// 左に移動
 		{
 			if (GetKeyboardPress(DIK_I) == true)	// 奥に移動
 			{
-				g_player[1].move.x -= cosf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
-				g_player[1].move.z += sinf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
+				g_player[1].move.x -= cosf(pCamera[1].rot.y - D3DX_PI / 4) * MOVE;
+				g_player[1].move.z += sinf(pCamera[1].rot.y - D3DX_PI / 4) * MOVE;
 			}
 			else if (GetKeyboardPress(DIK_K) == true)	// 手前に移動
 			{
-				g_player[1].move.x -= cosf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
-				g_player[1].move.z += sinf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
+				g_player[1].move.x -= cosf(pCamera[1].rot.y + D3DX_PI / 4) * MOVE;
+				g_player[1].move.z += sinf(pCamera[1].rot.y + D3DX_PI / 4) * MOVE;
 			}
 			else
 			{
-				g_player[1].move.x -= cosf(pCamera->rot.y) * MOVE;
-				g_player[1].move.z += sinf(pCamera->rot.y) * MOVE;
+				g_player[1].move.x -= cosf(pCamera[1].rot.y) * MOVE;
+				g_player[1].move.z += sinf(pCamera[1].rot.y) * MOVE;
 			}
 		}
 		else if (GetKeyboardPress(DIK_I) == true)	// 奥に移動
 		{
-			g_player[1].move.x -= sinf(pCamera->rot.y) * MOVE;
-			g_player[1].move.z -= cosf(pCamera->rot.y) * MOVE;
+			g_player[1].move.x -= sinf(pCamera[1].rot.y) * MOVE;
+			g_player[1].move.z -= cosf(pCamera[1].rot.y) * MOVE;
 		}
 		else if (GetKeyboardPress(DIK_K) == true)	// 手前に移動
 		{
-			g_player[1].move.x += sinf(pCamera->rot.y) * MOVE;
-			g_player[1].move.z += cosf(pCamera->rot.y) * MOVE;
+			g_player[1].move.x += sinf(pCamera[1].rot.y) * MOVE;
+			g_player[1].move.z += cosf(pCamera[1].rot.y) * MOVE;
 		}
 
 		// プレイヤーの向きを設定
@@ -291,44 +290,44 @@ void UpdatePlayer(void)
 		{
 			if (GetKeyboardPress(DIK_I) == true)	// 奥に移動
 			{
-				g_player[1].rotDest.y = pCamera->rot.y - D3DX_PI / 2 + D3DX_PI / 4;
+				g_player[1].rotDest.y = pCamera[1].rot.y - D3DX_PI / 2 + D3DX_PI / 4;
 			}
 			else if (GetKeyboardPress(DIK_K) == true)	// 手前に移動
 			{
-				g_player[1].rotDest.y = pCamera->rot.y - D3DX_PI / 2 - D3DX_PI / 4;
+				g_player[1].rotDest.y = pCamera[1].rot.y - D3DX_PI / 2 - D3DX_PI / 4;
 			}
 			else
 			{
-				g_player[1].rotDest.y = pCamera->rot.y - D3DX_PI / 2;
+				g_player[1].rotDest.y = pCamera[1].rot.y - D3DX_PI / 2;
 			}
 		}
 		else if (GetKeyboardPress(DIK_L) == true)	// 左に移動
 		{
 			if (GetKeyboardPress(DIK_I) == true)	// 奥に移動
 			{
-				g_player[1].rotDest.y = pCamera->rot.y + D3DX_PI / 2 - D3DX_PI / 4;
+				g_player[1].rotDest.y = pCamera[1].rot.y + D3DX_PI / 2 - D3DX_PI / 4;
 			}
 			else if (GetKeyboardPress(DIK_K) == true)	// 手前に移動
 			{
-				g_player[1].rotDest.y = pCamera->rot.y + D3DX_PI / 2 + D3DX_PI / 4;
+				g_player[1].rotDest.y = pCamera[1].rot.y + D3DX_PI / 2 + D3DX_PI / 4;
 			}
 			else
 			{
-				g_player[1].rotDest.y = pCamera->rot.y + D3DX_PI / 2;
+				g_player[1].rotDest.y = pCamera[1].rot.y + D3DX_PI / 2;
 			}
 		}
 		else if (GetKeyboardPress(DIK_I) == true)	// 奥に移動
 		{
-			g_player[1].rotDest.y = pCamera->rot.y;
+			g_player[1].rotDest.y = pCamera[1].rot.y;
 		}
 		else if (GetKeyboardPress(DIK_K) == true)	// 手前に移動
 		{
-			g_player[1].rotDest.y = pCamera->rot.y + D3DX_PI;
+			g_player[1].rotDest.y = pCamera[1].rot.y + D3DX_PI;
 		}
 	}
-	//
-	//// ジョイパッド[十字キー]操作
-	//for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
+	
+	// ジョイパッド[十字キー]操作
+	for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
 	{
 		if (g_player[nCntPlayer].bUse == true)
 		{
@@ -337,47 +336,47 @@ void UpdatePlayer(void)
 			{
 				if (GetJoypadPress(JOYKEY_UP, nCntPlayer) == true)	// 奥に移動
 				{
-					g_player[nCntPlayer].move.x -= sinf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
-					g_player[nCntPlayer].move.z -= cosf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
+					g_player[nCntPlayer].move.x -= sinf(pCamera[nCntPlayer].rot.y - D3DX_PI / 4) * MOVE;
+					g_player[nCntPlayer].move.z -= cosf(pCamera[nCntPlayer].rot.y - D3DX_PI / 4) * MOVE;
 				}
 				else if (GetJoypadPress(JOYKEY_DOWN, nCntPlayer) == true)	// 手前に移動
 				{
-					g_player[nCntPlayer].move.x += sinf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
-					g_player[nCntPlayer].move.z += cosf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
+					g_player[nCntPlayer].move.x += sinf(pCamera[nCntPlayer].rot.y + D3DX_PI / 4) * MOVE;
+					g_player[nCntPlayer].move.z += cosf(pCamera[nCntPlayer].rot.y + D3DX_PI / 4) * MOVE;
 				}
 				else
 				{
-					g_player[nCntPlayer].move.x += cosf(pCamera->rot.y) * MOVE;
-					g_player[nCntPlayer].move.z -= sinf(pCamera->rot.y) * MOVE;
+					g_player[nCntPlayer].move.x += cosf(pCamera[nCntPlayer].rot.y) * MOVE;
+					g_player[nCntPlayer].move.z -= sinf(pCamera[nCntPlayer].rot.y) * MOVE;
 				}
 			}
 			else if (GetJoypadPress(JOYKEY_RIGHT, nCntPlayer) == true)	// 左に移動
 			{
 				if (GetJoypadPress(JOYKEY_UP, nCntPlayer) == true)	// 奥に移動
 				{
-					g_player[nCntPlayer].move.x -= cosf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
-					g_player[nCntPlayer].move.z += sinf(pCamera->rot.y - D3DX_PI / 4) * MOVE;
+					g_player[nCntPlayer].move.x -= cosf(pCamera[nCntPlayer].rot.y - D3DX_PI / 4) * MOVE;
+					g_player[nCntPlayer].move.z += sinf(pCamera[nCntPlayer].rot.y - D3DX_PI / 4) * MOVE;
 				}
 				else if (GetJoypadPress(JOYKEY_DOWN, nCntPlayer) == true)	// 手前に移動
 				{
-					g_player[nCntPlayer].move.x -= cosf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
-					g_player[nCntPlayer].move.z += sinf(pCamera->rot.y + D3DX_PI / 4) * MOVE;
+					g_player[nCntPlayer].move.x -= cosf(pCamera[nCntPlayer].rot.y + D3DX_PI / 4) * MOVE;
+					g_player[nCntPlayer].move.z += sinf(pCamera[nCntPlayer].rot.y + D3DX_PI / 4) * MOVE;
 				}
 				else
 				{
-					g_player[nCntPlayer].move.x -= cosf(pCamera->rot.y) * MOVE;
-					g_player[nCntPlayer].move.z += sinf(pCamera->rot.y) * MOVE;
+					g_player[nCntPlayer].move.x -= cosf(pCamera[nCntPlayer].rot.y) * MOVE;
+					g_player[nCntPlayer].move.z += sinf(pCamera[nCntPlayer].rot.y) * MOVE;
 				}
 			}
 			else if (GetJoypadPress(JOYKEY_UP, nCntPlayer) == true)	// 奥に移動
 			{
-				g_player[nCntPlayer].move.x -= sinf(pCamera->rot.y) * MOVE;
-				g_player[nCntPlayer].move.z -= cosf(pCamera->rot.y) * MOVE;
+				g_player[nCntPlayer].move.x -= sinf(pCamera[nCntPlayer].rot.y) * MOVE;
+				g_player[nCntPlayer].move.z -= cosf(pCamera[nCntPlayer].rot.y) * MOVE;
 			}
 			else if (GetJoypadPress(JOYKEY_DOWN, nCntPlayer) == true)	// 手前に移動
 			{
-				g_player[nCntPlayer].move.x += sinf(pCamera->rot.y) * MOVE;
-				g_player[nCntPlayer].move.z += cosf(pCamera->rot.y) * MOVE;
+				g_player[nCntPlayer].move.x += sinf(pCamera[nCntPlayer].rot.y) * MOVE;
+				g_player[nCntPlayer].move.z += cosf(pCamera[nCntPlayer].rot.y) * MOVE;
 			}
 
 			// プレイヤーの方向を設定
@@ -385,45 +384,45 @@ void UpdatePlayer(void)
 			{
 				if (GetJoypadPress(JOYKEY_UP, nCntPlayer) == true)	// 奥に移動
 				{
-					g_player[nCntPlayer].rotDest.y = pCamera->rot.y - D3DX_PI / 2 + D3DX_PI / 4;
+					g_player[nCntPlayer].rotDest.y = pCamera[nCntPlayer].rot.y - D3DX_PI / 2 + D3DX_PI / 4;
 				}
 				else if (GetJoypadPress(JOYKEY_DOWN, nCntPlayer) == true)	// 手前に移動
 				{
-					g_player[nCntPlayer].rotDest.y = pCamera->rot.y - D3DX_PI / 2 - D3DX_PI / 4;
+					g_player[nCntPlayer].rotDest.y = pCamera[nCntPlayer].rot.y - D3DX_PI / 2 - D3DX_PI / 4;
 				}
 				else
 				{
-					g_player[nCntPlayer].rotDest.y = pCamera->rot.y - D3DX_PI / 2;
+					g_player[nCntPlayer].rotDest.y = pCamera[nCntPlayer].rot.y - D3DX_PI / 2;
 				}
 			}
 			else if (GetJoypadPress(JOYKEY_RIGHT, nCntPlayer) == true)	// 左に移動
 			{
 				if (GetJoypadPress(JOYKEY_UP, nCntPlayer) == true)	// 奥に移動
 				{
-					g_player[nCntPlayer].rotDest.y = pCamera->rot.y + D3DX_PI / 2 - D3DX_PI / 4;
+					g_player[nCntPlayer].rotDest.y = pCamera[nCntPlayer].rot.y + D3DX_PI / 2 - D3DX_PI / 4;
 				}
 				else if (GetJoypadPress(JOYKEY_DOWN, nCntPlayer) == true)	// 手前に移動
 				{
-					g_player[nCntPlayer].rotDest.y = pCamera->rot.y + D3DX_PI / 2 + D3DX_PI / 4;
+					g_player[nCntPlayer].rotDest.y = pCamera[nCntPlayer].rot.y + D3DX_PI / 2 + D3DX_PI / 4;
 				}
 				else
 				{
-					g_player[nCntPlayer].rotDest.y = pCamera->rot.y + D3DX_PI / 2;
+					g_player[nCntPlayer].rotDest.y = pCamera[nCntPlayer].rot.y + D3DX_PI / 2;
 				}
 			}
 			else if (GetJoypadPress(JOYKEY_UP, nCntPlayer) == true)	// 奥に移動
 			{
-				g_player[nCntPlayer].rotDest.y = pCamera->rot.y;
+				g_player[nCntPlayer].rotDest.y = pCamera[nCntPlayer].rot.y;
 			}
 			else if (GetJoypadPress(JOYKEY_DOWN, nCntPlayer) == true)	// 手前に移動
 			{
-				g_player[nCntPlayer].rotDest.y = pCamera->rot.y + D3DX_PI;
+				g_player[nCntPlayer].rotDest.y = pCamera[nCntPlayer].rot.y + D3DX_PI;
 			}
 		}
 	}
-	//
-	//// プレイヤーの方向を補正
-	//for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
+	
+	// プレイヤーの方向を補正
+	for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
 	{
 		if (g_player[nCntPlayer].bUse == true)
 		{
@@ -488,7 +487,6 @@ void UpdatePlayer(void)
 			g_player[nCntPlayer].move = DEFALT;
 		}
 	}
-
 }
 
 //========================================================================

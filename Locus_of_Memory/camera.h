@@ -68,7 +68,7 @@ void InitCamera(void);
 void UninitCamera(void);
 void UpdateCamera(void);
 void SetCamera(int nIdx);
-Camera* GetCamera(int nIdx);
+Camera* GetCamera(void);
 D3DVIEWPORT9 SetViewPort(DWORD X, DWORD Y, DWORD Width, DWORD Height);
 
 #endif

@@ -47,7 +47,7 @@ void InitTitle(void)
 	pCamera->posVDest = POS_V;
 	pCamera->posR = POS_R;
 	pCamera->posRDest = POS_R;
-	pCamera->posU = VEC_U;
+	pCamera->vecU = VEC_U;
 	pCamera->rot = ROT;
 	pCamera->rotDest = ROT;
 
