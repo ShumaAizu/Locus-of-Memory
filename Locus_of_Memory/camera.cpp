@@ -27,10 +27,10 @@ float fCameraDif;				// カメラの高さ
 // カメラの情報格納用
 CameraInfo g_acameraInfo[] =
 {
-	{INIT_1PCAMERAPOSV, INIT_1PCAMERAPOSR, INIT_POSU, INIT_1PCAMERAROT, INIT_1PVEIWPORT },
-	{INIT_2PCAMERAPOSV, INIT_2PCAMERAPOSR, INIT_POSU, INIT_2PCAMERAROT, INIT_2PVEIWPORT },
-	{INIT_1PCAMERAPOSV, INIT_1PCAMERAPOSR, INIT_POSU, INIT_1PCAMERAROT, INIT_3PVEIWPORT },
-	{INIT_1PCAMERAPOSV, INIT_1PCAMERAPOSR, INIT_POSU, INIT_1PCAMERAROT, INIT_4PVEIWPORT },
+	{INIT_1PCAMERAPOSV, INIT_1PCAMERAPOSR, INIT_VECU, INIT_1PCAMERAROT, INIT_1PVEIWPORT },
+	{INIT_2PCAMERAPOSV, INIT_2PCAMERAPOSR, INIT_VECU, INIT_2PCAMERAROT, INIT_2PVEIWPORT },
+	{INIT_1PCAMERAPOSV, INIT_1PCAMERAPOSR, INIT_VECU, INIT_1PCAMERAROT, INIT_3PVEIWPORT },
+	{INIT_1PCAMERAPOSV, INIT_1PCAMERAPOSR, INIT_VECU, INIT_1PCAMERAROT, INIT_4PVEIWPORT },
 };
 
 //=============================================================================
@@ -47,7 +47,7 @@ void InitCamera(void)
 		// カメラの位置設定
 		pCamera->posV = pCameraInfo->posV;
 		pCamera->posR = pCameraInfo->posR;
-		pCamera->posU = pCameraInfo->posU;
+		pCamera->vecU = pCameraInfo->vecU;
 		pCamera->rot = pCameraInfo->rot;
 
 		pCamera->viewport = pCameraInfo->viewport;		// ビューポート設定
@@ -188,7 +188,7 @@ void SetCamera(int nIdx)
 	D3DXMatrixLookAtLH(&pCamera->mtxView,
 					   &pCamera->posV,
 					   &pCamera->posR,
-					   &pCamera->posU);
+					   &pCamera->vecU);
 						
 	// ビューマトリックスの設定
 	pDevice->SetTransform(D3DTS_VIEW, &pCamera->mtxView);
@@ -197,9 +197,9 @@ void SetCamera(int nIdx)
 //=============================================================================
 //	カメラの取得処理
 //=============================================================================
-Camera *GetCamera(void)
+Camera *GetCamera(int nIdx)
 {
-	return &g_acamera[0];
+	return &g_acamera[nIdx];
 }
 
 //=============================================================================

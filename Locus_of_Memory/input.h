@@ -13,16 +13,17 @@
 //*****************************************************************************
 // マクロ定義
 //*****************************************************************************
-#define NUM_KEY_MAX			(256)		//キーの最大数
-#define NUM_JOYSTROKE_MAX	(38)
-#define JOYKEYSTROKE_START	(0x5800)
-#define NUM_MOUSE_MAX		(3)				// ボタンの最大数
+#define NUM_KEY_MAX			(256)		// キーの最大数
+#define NUM_MOUSE_MAX		(3)			// ボタンの最大数
 #define MAX_JOYPAD			(4)			// ジョイパッドの最大数
+#define JOYSTICKVALUE_MAX	(32767)		// スティックの値の最大
+#define JOYSTICKVALUE_MIN	(-32768)	// スティックの値の最小
+#define CUSTOM_DEADZONE		(512)		// デッドゾーン
 
 //*****************************************************************************
 // ジョイパッドのキーの種類
 //*****************************************************************************
-typedef enum
+typedef enum JOYKEY
 {
 	JOYKEY_UP = 0,				// 十字キー上
 	JOYKEY_DOWN,				// 十字キー下
@@ -46,7 +47,7 @@ typedef enum
 //*****************************************************************************
 // ジョイパッドのスティックの種類
 //*****************************************************************************
-typedef enum
+typedef enum JOYSTICK
 {
 	JOYSTICK_UP = 0,			// 上
 	JOYSTICK_DOWN,				// 下
@@ -58,13 +59,31 @@ typedef enum
 //**********************************************************************************
 //*** マウスのボタンの種類 ***
 //**********************************************************************************
-typedef enum
+typedef enum MOUSEKEY
 {
 	MOUSEKEY_LEFT = 0,		// 左クリック
 	MOUSEKEY_RIGHT,			// 右クリック
 	MOUSEKEY_WHEEL,			// 中クリック
 	MOUSEKEY_MAX
 }MOUSEKEY;
+
+//*****************************************************************************
+// ジョイパッド情報構造体定義
+//*****************************************************************************
+typedef struct JoypadState
+{
+	XINPUT_STATE JoykeyState;					// ジョイパッドのプレス情報
+	XINPUT_STATE JoykeyStateTrigger;			// ジョイパッドのトリガー情報
+	XINPUT_STATE JoykeyStateRelease;			// ジョイパッドのリリース情報
+	XINPUT_STATE JoykeyStateRepeat;				// ジョイパッドのリピート情報
+	XINPUT_VIBRATION JoypadVibration;			// ジョイパッドの振動情報
+	int nVibCounter;							// 振動カウンター
+	bool bJoyStickL[JOYSTICK_MAX];				// スティックの情報
+	bool bJoyStickR[JOYSTICK_MAX];				// スティックの情報
+	int nRepeatKeyCounter[JOYKEY_MAX];			// リピートカウント (ボタン)
+	int nRepeatStickCounterL[JOYSTICK_MAX];		// リピートカウント (Lスティック)
+	int nRepeatStickCounterR[JOYSTICK_MAX];		// リピートカウント (Rスティック)
+}JoypadState;
 
 //*****************************************************************************
 // プロトタイプ宣言
@@ -85,11 +104,15 @@ bool GetJoypadPress(JOYKEY key, int nIdx);
 bool GetJoypadTrigger(JOYKEY key, int nIdx);
 bool GetJoypadRelease(JOYKEY key, int nIdx);
 bool GetJoypadRepeat(JOYKEY key, int nIdx);
-bool GetJoypadAny(void);
-bool GetJoypadStickPress(JOYSTICK stick);
-bool GetJoypadStickRepeat(JOYSTICK stick);
+bool GetJoypadAny(int nIdx);
+bool GetJoypadStickPressL(JOYSTICK stick, int nIdx);
+bool GetJoypadStickPressR(JOYSTICK stick, int nIdx);
+bool GetJoypadStickRepeatL(JOYSTICK stick, int nIdx);
+bool GetJoypadStickRepeatR(JOYSTICK stick, int nIdx);
+bool GetJoypadStickLeft(float* pValueH, float* pValueV, int nIdx);
+bool GetJoypadStickRight(float* pValueH, float* pValueV, int nIdx);
 void SetJoypadVibration(int nLVibration, int nRVibration, int nVibCounter, int nIdx);
-XINPUT_STATE* GetJoypadState(void);
+JoypadState* GetJoypadState(int nIdx);
 bool GetJoypadControl(void);
 
 HRESULT InitMouse(HWND hWnd);

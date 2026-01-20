@@ -15,10 +15,10 @@
 //*****************************************************************************
 #define CAMERAPOSR_DIS		(200.0f)									// 視点と注視点との距離
 #define CAMERA_INERTIA		(0.115f)									// カメラ移動の慣性係数
-#define MAX_CAMERA			(2)											// カメラの最大数
+#define MAX_CAMERA			(1)											// カメラの最大数
 
 // 各種初期値
-#define INIT_POSU			(D3DXVECTOR3(0.0f, 1.0f, 0.0f))				// カメラの上方向ベクトル
+#define INIT_VECU			(D3DXVECTOR3(0.0f, 1.0f, 0.0f))				// カメラの上方向ベクトル
 #define INIT_1PCAMERAPOSV	(D3DXVECTOR3(-100.0f, 100.0f, 200.0f))		// 1Pカメラの視点
 #define INIT_1PCAMERAPOSR	(D3DXVECTOR3(0.0f, 50.0f, 0.0f))			// 1Pカメラの注視点
 #define INIT_1PCAMERAROT	(D3DXVECTOR3(0.0f, D3DX_PI, 0.0f))			// 1Pカメラの向き
@@ -39,7 +39,7 @@ typedef struct Camera
 {
 	D3DXVECTOR3 posV;				// 視点
 	D3DXVECTOR3 posR;				// 注視点
-	D3DXVECTOR3 posU;				// 上方向ベクトル
+	D3DXVECTOR3 vecU;				// 上方向ベクトル
 	D3DXVECTOR3 posVDest;			// 目的の視点
 	D3DXVECTOR3 posRDest;			// 目的の注視点
 	D3DXVECTOR3 rot;				// 向き
@@ -56,7 +56,7 @@ typedef struct CameraInfo
 {
 	D3DXVECTOR3 posV;				// 視点
 	D3DXVECTOR3 posR;				// 注視点
-	D3DXVECTOR3 posU;				// 上方向ベクトル
+	D3DXVECTOR3 vecU;				// 上方向ベクトル
 	D3DXVECTOR3 rot;				// 向き
 	D3DVIEWPORT9 viewport;			// ビューポート
 }CameraInfo;
@@ -68,7 +68,7 @@ void InitCamera(void);
 void UninitCamera(void);
 void UpdateCamera(void);
 void SetCamera(int nIdx);
-Camera* GetCamera(void);
+Camera* GetCamera(int nIdx);
 D3DVIEWPORT9 SetViewPort(DWORD X, DWORD Y, DWORD Width, DWORD Height);
 
 #endif
