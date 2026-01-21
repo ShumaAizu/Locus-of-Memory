@@ -15,7 +15,7 @@
 //#include"polygon.h"
 //#include"model.h"
 #include"player.h"
-//#include"shadow.h"
+#include"shadow.h"
 //#include"billboard.h"
 //#include"wall.h"
 //#include"field.h"
@@ -63,7 +63,7 @@ void InitGame(void)
 
 	//InitBillboard();
 
-	//InitShadow();
+	InitShadow();
 
 	InitPlayer();
 
@@ -100,7 +100,7 @@ void UninitGame(void)
 
 	//UninitBullet();
 
-	//UninitShadow();
+	UninitShadow();
 
 	//UninitBillboard();
 
@@ -170,7 +170,7 @@ void UpdateGame(void)
 
 		//UpdateBullet();
 
-		//UpdateShadow();
+		UpdateShadow();
 
 		//UpdateBillboard();
 
@@ -262,7 +262,7 @@ void DrawGame(void)
 
 	//DrawBullet();
 
-	//DrawShadow();
+	DrawShadow();
 
 	//DrawBillboard();
 

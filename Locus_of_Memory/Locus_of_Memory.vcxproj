@@ -170,6 +170,7 @@
     </ClCompile>
     <ClCompile Include="player.cpp" />
     <ClCompile Include="result.cpp" />
+    <ClCompile Include="shadow.cpp" />
     <ClCompile Include="title.cpp" />
     <ClCompile Include="titleui.cpp" />
     <ClCompile Include="tutorial.cpp" />
@@ -185,6 +186,7 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="result.h" />
+    <ClInclude Include="shadow.h" />
     <ClInclude Include="title.h" />
     <ClInclude Include="titleui.h" />
     <ClInclude Include="tutorial.h" />

@@ -108,6 +108,9 @@
     <ClCompile Include="player.cpp">
       <Filter>object\cpp</Filter>
     </ClCompile>
+    <ClCompile Include="shadow.cpp">
+      <Filter>object\cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -147,6 +150,9 @@
       <Filter>object\h</Filter>
     </ClInclude>
     <ClInclude Include="player.h">
+      <Filter>object\h</Filter>
+    </ClInclude>
+    <ClInclude Include="shadow.h">
       <Filter>object\h</Filter>
     </ClInclude>
   </ItemGroup>
