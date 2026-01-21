@@ -24,7 +24,7 @@ TEXTURE_FILENAME = data/TEXTURE/grass000.png		# [5]草テクスチャ
 #------------------------------------------------------------------------------
 # モデル数
 #------------------------------------------------------------------------------
-NUM_MODEL = 6
+NUM_MODEL = 7
 
 #------------------------------------------------------------------------------
 # モデルファイル名
@@ -35,6 +35,7 @@ MODEL_FILENAME = data/MODEL/shop/X/shop000.x	# [2]店1号
 MODEL_FILENAME = data/MODEL/shop/X/shop001.x	# [3]店2号
 MODEL_FILENAME = data/MODEL/streetlight/siro.x	# [4]城(仮)
 MODEL_FILENAME = data/MODEL/house/house2.x       # [5]家2(仮)
+MODEL_FILENAME = data/MODEL/house/house003.x       # [6]家3(仮)
 #------------------------------------------------------------------------------
 # カメラ情報
 #------------------------------------------------------------------------------
@@ -77,7 +78,7 @@ FIELDSET
 	POS = 0 0 0
 	ROT = 0 0 0
 	BLOCK = 16 16
-	SIZE = 700 700
+	SIZE = 800 700
 END_FIELDSET
 
 
@@ -126,7 +127,7 @@ END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = 756 0 -2321
+	POS = 836 0 -2217
 	ROT = 0 0 0
 	SHADOW = 0
 	COLLISION = 1
@@ -134,14 +135,14 @@ END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = 1225 0 -2388
+	POS = 1450 0 -2217
 	ROT = 0 0 0
 	SHADOW = 0
 END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = 1690 0 -2329
+	POS = 1753 0 -2217
 	ROT = 0 0 0
 	SHADOW = 0
 	COLLISION = 1
@@ -189,7 +190,7 @@ END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = 2084 0 -1653
+	POS = 2107 0 -1753
 	ROT = 0 -90 0
 	SHADOW = 0
 	COLLISION = 1
@@ -197,7 +198,7 @@ END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = 2087 0 -761
+	POS = 2006 0 -761
 	ROT = 0 -90 0
 	SHADOW = 0
 	COLLISION = 1
@@ -213,7 +214,7 @@ END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = -818 0 -3269
+	POS = -930 0 -3216
 	ROT = 0 0 0
 	SHADOW = 0
 	COLLISION = 1
@@ -223,14 +224,6 @@ MODELSET
 	TYPE = 1
 	POS = -1295 0 -3239
 	ROT = 0 0 0
-	SHADOW = 0
-	COLLISION = 1
-END_MODELSET
-
-MODELSET
-	TYPE = 1
-	POS = -796 0 -2897
-	ROT = 0 90 0
 	SHADOW = 0
 	COLLISION = 1
 END_MODELSET
@@ -285,7 +278,7 @@ END_MODELSET
 
 MODELSET
 	TYPE = 1
-	POS = 1447 0 204
+	POS = 1645 0 342
 	ROT = 0 0 0
 	SHADOW = 0
 	COLLISION = 1
@@ -356,8 +349,16 @@ MODELSET
 END_MODELSET
 
 MODELSET
+	TYPE = 3
+	POS = 1655 0 -1248
+	ROT = 0 0 0
+	SHADOW = 0
+	COLLISION = 1
+END_MODELSET
+
+MODELSET
 	TYPE = 4
-	POS = 110 0 4100
+	POS = 110 0 5000
 	ROT = 0 0 0
 	SHADOW = 0
 	COLLISION = 1
@@ -370,6 +371,47 @@ MODELSET
 	SHADOW = 0
 	COLLISION = 1
 END_MODELSET
+
+MODELSET
+	TYPE = 5
+	POS = -352 0 -1493
+	ROT = 0 -90 0
+	SHADOW = 0
+	COLLISION = 1
+END_MODELSET
+
+MODELSET
+	TYPE = 5
+	POS = 2141 0 -1287
+	ROT = 0 -90 0
+	SHADOW = 0
+	COLLISION = 1
+END_MODELSET
+
+MODELSET
+	TYPE = 5
+	POS = 1135 0 -2217
+	ROT = 0 0 0
+	SHADOW = 0
+	COLLISION = 1
+END_MODELSET
+
+MODELSET
+	TYPE = 6
+	POS = -1772 0 -1045
+	ROT = 0 90 0
+	SHADOW = 0
+	COLLISION = 1
+END_MODELSET
+
+MODELSET
+	TYPE = 6
+	POS = -796 0 -2589
+	ROT = 0 90 0
+	SHADOW = 0
+	COLLISION = 1
+END_MODELSET
+
 
 #------------------------------------------------------------------------------
 # ビルボード配置情報
