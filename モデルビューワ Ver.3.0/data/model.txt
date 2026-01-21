@@ -24,7 +24,7 @@ TEXTURE_FILENAME = data/TEXTURE/grass000.png		# [5]草テクスチャ
 #------------------------------------------------------------------------------
 # モデル数
 #------------------------------------------------------------------------------
-NUM_MODEL = 9
+NUM_MODEL = 10
 
 #------------------------------------------------------------------------------
 # モデルファイル名
@@ -38,6 +38,7 @@ MODEL_FILENAME = data/MODEL/house/house2.x       # [5]家2(仮)
 MODEL_FILENAME = data/MODEL/house/house003.x       # [6]家3(仮)
 MODEL_FILENAME = data/MODEL/shop/X/shop002.x	# [7]店3号
 MODEL_FILENAME = data/MODEL/house/house004.x       # [8]家4(仮)
+MODEL_FILENAME = data/MODEL/lectern/lectern.x       # [9]書見台
 #------------------------------------------------------------------------------
 # カメラ情報
 #------------------------------------------------------------------------------
@@ -532,6 +533,14 @@ END_MODELSET
 MODELSET
 	TYPE = 8
 	POS = -2101 0 2194
+	ROT = 0 0 0
+	SHADOW = 0
+	COLLISION = 1
+END_MODELSET
+
+MODELSET
+	TYPE = 9
+	POS = 110 0 5000
 	ROT = 0 0 0
 	SHADOW = 0
 	COLLISION = 1
