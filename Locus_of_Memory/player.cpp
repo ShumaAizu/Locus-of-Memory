@@ -5,6 +5,7 @@
 //
 //========================================================================
 #include "main.h"
+#include "debugproc.h"
 #include "player.h"
 #include "shadow.h"
 #include "camera.h"
@@ -493,6 +494,7 @@ void UpdatePlayer(void)
 			if (g_aPlayer[nCntPlayer].pos.y < 0.0f)	// 最低高度に到達したとき
 			{
 				g_aPlayer[nCntPlayer].pos.y = 0.0f;
+				g_aPlayer[nCntPlayer].move.y = 0.0f;
 				g_aPlayer[nCntPlayer].bJump = false;
 			}
 			else if (g_aPlayer[nCntPlayer].pos.y > 100.0f)	// 最高高度に到達したとき
@@ -500,12 +502,17 @@ void UpdatePlayer(void)
 				g_aPlayer[nCntPlayer].pos.y = 100.0f;
 			}
 
+			// 影の位置の更新
 			SetPositionShadow(g_aPlayer[nCntPlayer].nIdxShadow, g_aPlayer[nCntPlayer].pos);
 
 			// 移動量の更新
 			g_aPlayer[nCntPlayer].move.x += (0.0f - g_aPlayer[nCntPlayer].move.x) * 0.1f;
 			g_aPlayer[nCntPlayer].move.y += (0.0f - g_aPlayer[nCntPlayer].move.y) * 0.1f;
 			g_aPlayer[nCntPlayer].move.z += (0.0f - g_aPlayer[nCntPlayer].move.z) * 0.1f;
+
+			// デバッグ表示
+			PrintDebugProc("プレイヤー[%d]の位置 : (%.3f, %.3f, %.3f)\n", nCntPlayer, g_aPlayer[nCntPlayer].pos.x, g_aPlayer[nCntPlayer].pos.y, g_aPlayer[nCntPlayer].pos.z);
+			PrintDebugProc("プレイヤー[%d]の移動量 : (%.3f, %.3f, %.3f)\n", nCntPlayer, g_aPlayer[nCntPlayer].move.x, g_aPlayer[nCntPlayer].move.y, g_aPlayer[nCntPlayer].move.z);
 		}
 #if 0
 		// Enterキーでリセット
