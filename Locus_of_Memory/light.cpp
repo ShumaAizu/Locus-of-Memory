@@ -48,7 +48,7 @@ void InitLight(void)
 
 		case 2:	// 2番目のライト
 			// ライトの拡散光を設定
-			g_aLight[nCntLight].Diffuse = COLOR_BRIGHT;
+			g_aLight[nCntLight].Diffuse = LIGHT_BRIGHT;
 			// ライトの方向を設定
 			vecDir = DIRECTOPN2;
 			break;
