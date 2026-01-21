@@ -161,7 +161,7 @@ void UpdateJoypad(void)
 
 		if (XInputGetState(nCntJoypad, &joykeyState) == ERROR_SUCCESS)
 		{// ジョイパッドの情報が取得出来たら
-			pJoykeyStateTrigger->Gamepad.wButtons = (joykeyState.Gamepad.wButtons ^ joykeyState.Gamepad.wButtons) & joykeyState.Gamepad.wButtons;
+			pJoykeyStateTrigger->Gamepad.wButtons = (pJoykeyState->Gamepad.wButtons ^ joykeyState.Gamepad.wButtons) & joykeyState.Gamepad.wButtons;
 			pJoykeyStateRelease->Gamepad.wButtons = (pJoykeyState->Gamepad.wButtons ^ joykeyState.Gamepad.wButtons) & pJoykeyState->Gamepad.wButtons;
 			pJoykeyStateRepeat->Gamepad.wButtons = (pJoykeyState->Gamepad.wButtons & joykeyState.Gamepad.wButtons);
 			*pJoykeyState = joykeyState;		// ジョイパッドのプレス情報を保存
@@ -360,7 +360,7 @@ bool GetJoypadRepeat(JOYKEY key, int nIdx)
 {
 	JoypadState* pJoypadState = &g_JoypadState[nIdx];
 
-	PrintDebugProc("%d\n", pJoypadState->JoykeyStateRepeat.Gamepad.wButtons);
+	PrintDebugProc("%d\n", pJoypadState->JoykeyStateTrigger.Gamepad.wButtons);
 
 	if (pJoypadState->JoykeyStateTrigger.Gamepad.wButtons & (0x01 << key))
 	{// 最初はトリガー
