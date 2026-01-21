@@ -166,6 +166,8 @@ void UpdateJoypad(void)
 			pJoykeyStateRepeat->Gamepad.wButtons = (pJoykeyState->Gamepad.wButtons & joykeyState.Gamepad.wButtons);
 			*pJoykeyState = joykeyState;		// ジョイパッドのプレス情報を保存
 
+			PrintDebugProc("%f", pJoykeyState->Gamepad.bLeftTrigger);
+
 			//-----スティックの情報-----//
 
 			// 左スティック
@@ -381,6 +383,17 @@ bool GetJoypadRepeat(JOYKEY key, int nIdx)
 	}
 
 	return false;
+}
+
+//=============================================================================
+//	ジョイスティックのリピート情報を取得 (Lスティック)
+//=============================================================================
+bool GetJoypadLeftTriggePress(int nIdx)
+{
+	if (g_JoypadState[nIdx].JoykeyState.Gamepad.bLeftTrigger >= ZLRTRIGGER)
+	{
+		return true;
+	}
 }
 
 //=============================================================================

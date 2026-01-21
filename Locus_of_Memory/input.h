@@ -19,6 +19,7 @@
 #define JOYSTICKVALUE_MAX	(32767)		// スティックの値の最大
 #define JOYSTICKVALUE_MIN	(-32768)	// スティックの値の最小
 #define CUSTOM_DEADZONE		(512)		// デッドゾーン
+#define ZLRTRIGGER			(2550)		// ZLZRトリガーの値
 
 //*****************************************************************************
 // ジョイパッドのキーの種類
@@ -105,6 +106,7 @@ bool GetJoypadTrigger(JOYKEY key, int nIdx);
 bool GetJoypadRelease(JOYKEY key, int nIdx);
 bool GetJoypadRepeat(JOYKEY key, int nIdx);
 bool GetJoypadAny(int nIdx);
+bool GetJoypadLeftTriggePress(int nIdx);
 bool GetJoypadStickPressL(JOYSTICK stick, int nIdx);
 bool GetJoypadStickPressR(JOYSTICK stick, int nIdx);
 bool GetJoypadStickRepeatL(JOYSTICK stick, int nIdx);
