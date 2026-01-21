@@ -7,6 +7,7 @@
 #include "main.h"
 #include "player.h"
 #include "camera.h"
+#include "title.h"
 #include "input.h"
 
 // マクロ定義
@@ -16,13 +17,13 @@
 #define ROTATE			(0.9f)								// 回転量
 #define SHOT			(-10.0f)							// 発射位置
 #define SHADOｗ			(10.0f)								// 影の大きさ
-#define CORRECTION_ROT	(0.075f)								// 回転の減衰係数
+#define CORRECTION_ROT	(0.075f)							// 回転の減衰係数
 #define PI				(D3DX_PI)							// 円周率
 #define RIGHT			(D3DX_PI / 2)						// 右を向く
 #define LEFT			(-(D3DX_PI / 2))					// 左を向く
 #define BACK			(D3DX_PI)							// 後ろを向く
 #define FRONT			(0.0f)								// 正面を向く
-#define LENGTH			(192.0f)							// フィールドの範囲
+#define LENGTH			(50.0f)								// フィールドの範囲
 #define POS				(D3DXVECTOR3(0.0f, 20.0f, 0.0f))	// プレイヤーの位置
 #define DEFALT			(D3DXVECTOR3(0.0f, 0.0f, 0.0f))		// xyzが0.0fの場合
 #define NORMAL			(D3DXVECTOR3(0.0f, 1.0f, 0.0f))		// 基本の法線
@@ -91,8 +92,12 @@ void InitPlayer(void)
 		}
 	}
 
+	OPERATIONTYPE operationtyoe = GetOperationType();
 	SetPlayer(0, POS, DEFALT);
-	SetPlayer(1, DEFALT, DEFALT);
+	if (operationtyoe == OPERATIONTYPE_2P)
+	{
+		SetPlayer(1, DEFALT, DEFALT);
+	}
 }
 
 //========================================================================
@@ -234,7 +239,9 @@ void UpdatePlayer(void)
 			g_player[0].rotDest.y = pCamera[0].rot.y + D3DX_PI;
 		}
 	}
+
 	// キーボード操作[2P] / IJKL
+#ifdef _DEBUG
 	if (g_player[1].bUse == true)
 	{
 		// プレイヤーの移動を管理
@@ -325,6 +332,7 @@ void UpdatePlayer(void)
 			g_player[1].rotDest.y = pCamera[1].rot.y + D3DX_PI;
 		}
 	}
+#endif	
 	
 	// ジョイパッド[十字キー]操作
 	for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
@@ -426,24 +434,14 @@ void UpdatePlayer(void)
 	{
 		if (g_player[nCntPlayer].bUse == true)
 		{
+			g_player[nCntPlayer].rotDest.y = AngleNormalize(g_player[nCntPlayer].rotDest.y);
+			g_player[nCntPlayer].rot.y = AngleNormalize(g_player[nCntPlayer].rot.y);
+
 			fRotDiffKey = g_player[nCntPlayer].rotDest.y - g_player[nCntPlayer].rot.y;	// 差分を計算
-			if (fRotDiffKey > D3DX_PI)
-			{
-				fRotDiffKey -= D3DX_PI * 2;
-			}
-			if (fRotDiffKey < -D3DX_PI)
-			{
-				fRotDiffKey += D3DX_PI * 2;
-			}
+			fRotDiffKey = AngleNormalize(fRotDiffKey);
+			
 			g_player[nCntPlayer].rot.y += (fRotDiffKey)*CORRECTION_ROT;
-			if (g_player[nCntPlayer].rot.y > D3DX_PI)
-			{
-				g_player[nCntPlayer].rot.y -= D3DX_PI * 2;
-			}
-			if (g_player[nCntPlayer].rot.y < -D3DX_PI)
-			{
-				g_player[nCntPlayer].rot.y += D3DX_PI * 2;
-			}
+			g_player[nCntPlayer].rot.y = AngleNormalize(g_player[nCntPlayer].rot.y);
 
 			// 位置の更新
 			g_player[nCntPlayer].pos += g_player[nCntPlayer].move;
