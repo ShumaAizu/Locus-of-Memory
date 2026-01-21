@@ -380,8 +380,6 @@ bool GetJoypadRepeat(JOYKEY key, int nIdx)
 		}
 	}
 
-	PrintDebugProc("%d\n", pJoypadState->nRepeatKeyCounter[key]);
-
 	return false;
 }
 

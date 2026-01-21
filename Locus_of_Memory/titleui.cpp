@@ -207,26 +207,8 @@ void UpdateTitleUI(void)
 	// 現在のフェードの状態を管理
 	FADE *pfade = GetFade();
 
-	// 選択状態の変更(Trigger)
-	if (GetKeyboardTrigger(DIK_W) == true || GetJoypadTrigger(JOYKEY_UP, 0) == true)
-	{
-		g_nSelectOperation--;
-		if (g_nSelectOperation < TITLEUITYPE_1PPLAY)
-		{
-			g_nSelectOperation = TITLEUITYPE_KEYBOARD;
-		}
-	}
-	else if (GetKeyboardTrigger(DIK_S) == true || GetJoypadTrigger(JOYKEY_DOWN, 0) == true)
-	{
-		g_nSelectOperation++;
-		if (g_nSelectOperation > TITLEUITYPE_KEYBOARD)
-		{
-			g_nSelectOperation = TITLEUITYPE_1PPLAY;
-		}
-	}
-
 	// 選択状態の変更(Repeat)
-	else if (GetKeyboardRepeat(DIK_W) == true || GetJoypadRepeat(JOYKEY_UP, 0) == true)
+	if (GetKeyboardRepeat(DIK_W) == true || GetJoypadRepeat(JOYKEY_UP, 0) == true)
 	{
 		g_nSelectOperation--;
 		if (g_nSelectOperation < TITLEUITYPE_1PPLAY)
