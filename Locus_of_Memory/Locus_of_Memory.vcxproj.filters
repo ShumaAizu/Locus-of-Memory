@@ -114,6 +114,9 @@
     <ClCompile Include="meshfield.cpp">
       <Filter>object\cpp</Filter>
     </ClCompile>
+    <ClCompile Include="fog.cpp">
+      <Filter>main\cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -160,6 +163,9 @@
     </ClInclude>
     <ClInclude Include="meshfield.h">
       <Filter>object\h</Filter>
+    </ClInclude>
+    <ClInclude Include="fog.h">
+      <Filter>main\h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
