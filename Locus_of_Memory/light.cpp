@@ -41,7 +41,8 @@ void InitLight(void)
 			// ライトの拡散光を設定
 			g_aLight[nCntLight].Diffuse = LIGHT_BRIGHTEST;
 			// ライトの方向を設定
-			vecDir = DIRECTOPN0;
+			g_LightDis = DIRECTOPN0;
+			vecDir = g_LightDis;
 			break;
 
 		case 1:	// 1番目のライト
