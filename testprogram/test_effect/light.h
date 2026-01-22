@@ -11,10 +11,8 @@
 #define LIGHT_BRIGHTER			(D3DXCOLOR(0.700f,	0.700f,	0.700f,	1.000f))	// 2番目に明るい光源
 #define COLOR_BRIGHT			(D3DXCOLOR(0.300f,	0.300f,	0.300f,	1.000f))	// 3番目に明るい光源
 
-
 // プロトタイプ宣言
 void InitLight(void);
 void UninitLight(void);
 void UpdateLight(void);
-
 #endif
