@@ -48,9 +48,6 @@ void InitGame(void)
 	// ライトの初期化処理
 	InitLight();
 
-	// カメラの初期化処理
-	InitCamera();
-
 	//InitField();
 
 	//InitMeshsky();
@@ -88,9 +85,6 @@ void UninitGame(void)
 
 	// ライトの終了処理
 	UninitLight();
-
-	// カメラの終了処理
-	UninitCamera();
 
 	//UninitField();
 
@@ -153,9 +147,6 @@ void UpdateGame(void)
 	{
 		// プレイヤーの更新処理
 		//UpdateBG();
-
-		// カメラの更新処理
-		UpdateCamera();
 
 		// ライトの更新処理
 		UpdateLight();
