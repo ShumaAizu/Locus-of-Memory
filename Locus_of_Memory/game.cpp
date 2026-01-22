@@ -19,7 +19,6 @@
 //#include"billboard.h"
 //#include"wall.h"
 //#include"field.h"
-//#include"meshfield.h"
 //#include"mashwall.h"
 //#include"meshsky.h"
 //#include"block.h"
@@ -29,6 +28,7 @@
 //#include"score.h"
 //#include"timer.h"
 
+#include"meshfield.h"
 
 bool g_bPauseMenu = true;					// ポーズメニュー状態のON/OFF
 bool g_bPause = false;
@@ -45,15 +45,15 @@ void InitGame(void)
 
 	//InitPause();
 
+	// ライトの初期化処理
 	InitLight();
 
+	// カメラの初期化処理
 	InitCamera();
 
 	//InitField();
 
 	//InitMeshsky();
-
-	//InitMeshfield();
 
 	//InitWall();
 
@@ -86,13 +86,13 @@ void UninitGame(void)
 	// プレイヤーの終了処理
 	//UninitPause();
 
+	// ライトの終了処理
 	UninitLight();
 
+	// カメラの終了処理
 	UninitCamera();
 
 	//UninitField();
-
-	//UninitMeshfield();
 
 	//UninitWall();
 
@@ -154,15 +154,18 @@ void UpdateGame(void)
 		// プレイヤーの更新処理
 		//UpdateBG();
 
+		// カメラの更新処理
 		UpdateCamera();
 
+		// ライトの更新処理
 		UpdateLight();
 
 		//UpdateField();
 
 		//UpdateMeshsky();
 
-		//UpdateMeshfield();
+		// メッシュフィールドの更新処理
+		UpdateMeshField();
 
 		//UpdateWall();
 
@@ -254,7 +257,8 @@ void DrawGame(void)
 
 	//DrawMeshsky();
 
-	//DrawMeshfield();
+	// メッシュフィールドの描画処理
+	DrawMeshField();
 
 	//DrawWall();
 
@@ -262,10 +266,12 @@ void DrawGame(void)
 
 	//DrawBullet();
 
+	// 影の描画処理
 	DrawShadow();
 
 	//DrawBillboard();
 
+	// プレイヤーの描画処理
 	DrawPlayer();
 
 	//DrawModel();

@@ -21,6 +21,8 @@
 #include "camera.h"
 //#include "light.h"
 
+#include "meshfield.h"
+
 //*****************************************************************************
 // マクロ定義
 //*****************************************************************************
@@ -348,6 +350,9 @@ HRESULT Init(HINSTANCE hInstance, HWND hWnd, BOOL bWindow)
 	//// サウンドの初期化処理
 	//InitSound(hWnd);
 
+	// メッシュフィールドの初期化処理
+	InitMeshField();
+
 	// モードの設定
 	InitFade(g_mode);
 
@@ -380,6 +385,9 @@ void Uninit(void)
 
 	// カメラの終了処理
 	UninitCamera();
+
+	// メッシュフィールドの終了処理
+	UninitMeshField();
 
 	//// ライトの終了処理
 	//UninitLight();
@@ -629,6 +637,7 @@ void SetMode(MODE mode)
 	//	break;
 	}
 
+	// カメラをモードによって切り替える
 	SetNumCamera(mode);
 
 	// モードの更新
