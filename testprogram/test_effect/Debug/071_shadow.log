@@ -1,0 +1,12 @@
+﻿  camera.cpp
+  field.cpp
+  input.cpp
+  light.cpp
+  main.cpp
+  player.cpp
+  shadow.cpp
+  wall.cpp
+  コードを生成中...
+C:\Users\student\Desktop\GCⅠ\教科\004_3Dゲーム\071_shadow\input.cpp(370): warning C4715: 'GetJoypadLeftStickTrigger': 値を返さないコントロール パスがあります。
+C:\Users\student\Desktop\GCⅠ\教科\004_3Dゲーム\071_shadow\input.cpp(422): warning C4715: 'GetJoypadRightStickTrigger': 値を返さないコントロール パスがあります。
+  071_shadow.vcxproj -> C:\Users\student\Desktop\GCⅠ\教科\004_3Dゲーム\071_shadow\071_shadow.exe
