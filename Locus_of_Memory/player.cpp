@@ -13,20 +13,20 @@
 #include "input.h"
 
 // マクロ定義
-#define MAX_PLAYER		(2)									// プレイヤーの最大数
-#define MAX_MODEL		(1)									// モデルの最大数
-#define MOVE			(0.25f)								// 移動量
-#define ROTATE			(0.9f)								// 回転量
+#define MAX_PLAYER		(2)					// プレイヤーの最大数
+#define MAX_MODEL		(1)					// モデルの最大数
+#define MOVE			(0.25f)				// 移動量
+#define ROTATE			(0.9f)				// 回転量
 #define GRAVITY			(0.75f)				// 重力
 #define JUMP			(17.0f)				// ジャンプ
-#define SHADOｗ			(10.0f)								// 影の大きさ
-#define CORRECTION_ROT	(0.075f)							// 回転の減衰係数
-#define PI				(D3DX_PI)							// 円周率
-#define RIGHT			(D3DX_PI / 2)						// 右を向く
-#define LEFT			(-(D3DX_PI / 2))					// 左を向く
-#define BACK			(D3DX_PI)							// 後ろを向く
-#define FRONT			(0.0f)								// 正面を向く
-#define LENGTH			(50.0f)								// フィールドの範囲
+#define SHADOｗ			(10.0f)				// 影の大きさ
+#define CORRECTION_ROT	(0.075f)			// 回転の減衰係数
+#define PI				(D3DX_PI)			// 円周率
+#define RIGHT			(D3DX_PI / 2)		// 右を向く
+#define LEFT			(-(D3DX_PI / 2))	// 左を向く
+#define BACK			(D3DX_PI)			// 後ろを向く
+#define FRONT			(0.0f)				// 正面を向く
+#define LENGTH			(50.0f)				// フィールドの範囲
 #define POS				(D3DXVECTOR3(0.0f, 20.0f, 0.0f))	// プレイヤーの位置
 #define DEFALT			(D3DXVECTOR3(0.0f, 0.0f, 0.0f))		// xyzが0.0fの場合
 #define NORMAL			(D3DXVECTOR3(0.0f, 1.0f, 0.0f))		// 基本の法線
