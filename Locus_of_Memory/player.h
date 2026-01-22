@@ -8,7 +8,7 @@
 #define	_Player_H_
 
 // マクロ定義
-#define MAX_MAT	(16)	// マテリアルの最大数
+#define MAX_PLAYERMAT	(16)	// マテリアルの最大数
 
 // モデルの構造体
 typedef struct

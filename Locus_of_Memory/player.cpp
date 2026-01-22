@@ -35,7 +35,7 @@
 LPD3DXMESH			g_pMeshPlayer[MAX_PLAYER] = {};				// メッシュ(頂点情報)へのポインタ
 LPD3DXBUFFER		g_pBuffMatPlayer[MAX_PLAYER] = {};			// マテリアルへのポインタ
 DWORD				g_dwNumMatPlayer[MAX_PLAYER] = {0, 0};		// マテリアルの数
-LPDIRECT3DTEXTURE9	g_apTexturePlayer[MAX_PLAYER][MAX_MAT];		// テクスチャへの	ポインタ
+LPDIRECT3DTEXTURE9	g_apTexturePlayer[MAX_PLAYER][MAX_PLAYERMAT];		// テクスチャへの	ポインタ
 Player				g_aPlayer[MAX_PLAYER];						// プレイヤーの情報を格納
 
 // 1Pのモデル
