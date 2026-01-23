@@ -117,6 +117,9 @@
     <ClCompile Include="fog.cpp">
       <Filter>main\cpp</Filter>
     </ClCompile>
+    <ClCompile Include="magic.cpp">
+      <Filter>object\cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game.h">
@@ -166,6 +169,9 @@
     </ClInclude>
     <ClInclude Include="fog.h">
       <Filter>main\h</Filter>
+    </ClInclude>
+    <ClInclude Include="magic.h">
+      <Filter>object\h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
