@@ -15,6 +15,7 @@ typedef struct
 {
 	D3DXMATRIX		mtxWorld;	// ワールドマトリックス
 	D3DXVECTOR3		pos;		// プレイヤーの位置
+	D3DXVECTOR3		posOld;		// プレイヤーの過去の位置
 	D3DXVECTOR3		move;		// プレイヤーの移動量
 	D3DXVECTOR3		rot;		// プレイヤーの向き
 	D3DXVECTOR3		rotDest;	// プレイヤーの目的の向き

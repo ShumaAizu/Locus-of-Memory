@@ -94,7 +94,7 @@ void UpdateTitle(void)
 		g_nModeResult++;
 		if (g_nModeResult >= NEXT_MODE)
 		{
-			SetFade(MODE_RANKING);
+			SetFade(MODE_RESULT);
 			g_bFade = true;
 		}
 		else if ((GetKeyboardTrigger(DIK_RETURN) == true || GetJoypadTrigger(JOYKEY_A, 0) == true || GetJoypadTrigger(JOYKEY_START, 0) == true) && *pfade == FADE_NONE)

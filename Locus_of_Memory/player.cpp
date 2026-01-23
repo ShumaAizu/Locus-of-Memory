@@ -10,6 +10,7 @@
 #include "shadow.h"
 #include "camera.h"
 #include "title.h"
+#include "meshfield.h"
 #include "input.h"
 
 // マクロ定義
@@ -62,6 +63,7 @@ void InitPlayer(void)
 	for (int nCntPlayer = 0; nCntPlayer < MAX_PLAYER; nCntPlayer++)
 	{
 		g_aPlayer[nCntPlayer].pos = DEFALT;
+		g_aPlayer[nCntPlayer].posOld = DEFALT;
 		g_aPlayer[nCntPlayer].rot = DEFALT;
 		g_aPlayer[nCntPlayer].rotDest = DEFALT;
 		g_aPlayer[nCntPlayer].move = DEFALT;
@@ -156,6 +158,9 @@ void UpdatePlayer(void)
 	// キーボード操作[1P] / WASD
 	if (g_aPlayer[0].bUse == true)
 	{
+		// 過去の位置を保存
+		g_aPlayer[0].posOld = g_aPlayer[0].pos;
+
 		// プレイヤーの移動を管理
 		if (GetKeyboardPress(DIK_A) == true)	// 右に移動
 		{
@@ -256,6 +261,9 @@ void UpdatePlayer(void)
 #ifdef _DEBUG
 	if (g_aPlayer[1].bUse == true)
 	{
+		// 過去の位置を保存
+		g_aPlayer[1].posOld = g_aPlayer[1].pos;
+
 		// プレイヤーの移動を管理
 		if (GetKeyboardPress(DIK_J) == true)	// 右に移動
 		{
@@ -358,6 +366,9 @@ void UpdatePlayer(void)
 	{
 		if (g_aPlayer[nCntPlayer].bUse == true)
 		{
+			// 過去の位置を保存
+			g_aPlayer[nCntPlayer].posOld = g_aPlayer[nCntPlayer].pos;
+
 			// 移動を管理
 			if (GetJoypadPress(JOYKEY_LEFT, nCntPlayer) == true)	// 右に移動
 			{
@@ -446,6 +457,7 @@ void UpdatePlayer(void)
 				g_aPlayer[nCntPlayer].rotDest.y = pCamera[nCntPlayer].rot.y + D3DX_PI;
 			}
 
+			// ジャンプ処理
 			if (GetJoypadTrigger(JOYKEY_A, nCntPlayer) == true && g_aPlayer[nCntPlayer].bJump == false)
 			{
 				g_aPlayer[nCntPlayer].move.y = JUMP;
@@ -474,6 +486,9 @@ void UpdatePlayer(void)
 			// 位置の更新
 			g_aPlayer[nCntPlayer].pos += g_aPlayer[nCntPlayer].move;
 
+			// メッシュフィールドとの当たり判定
+			CollisionMeshField(&g_aPlayer[nCntPlayer].pos, &g_aPlayer[nCntPlayer].posOld, &g_aPlayer[nCntPlayer].move);
+
 			// プレイヤーの行動範囲を制限
 			if (g_aPlayer[nCntPlayer].pos.x < -LENGTH)	// 左の壁にぶつかったとき
 			{
@@ -491,6 +506,7 @@ void UpdatePlayer(void)
 			{
 				g_aPlayer[nCntPlayer].pos.z = LENGTH;
 			}
+#if 0
 			if (g_aPlayer[nCntPlayer].pos.y < 0.0f)	// 最低高度に到達したとき
 			{
 				g_aPlayer[nCntPlayer].pos.y = 0.0f;
@@ -501,7 +517,7 @@ void UpdatePlayer(void)
 			{
 				g_aPlayer[nCntPlayer].pos.y = 100.0f;
 			}
-
+#endif
 			// 影の位置の更新
 			SetPositionShadow(g_aPlayer[nCntPlayer].nIdxShadow, g_aPlayer[nCntPlayer].pos);
 
@@ -595,6 +611,7 @@ void SetPlayer(int nIdx, D3DXVECTOR3 pos, D3DXVECTOR3 rot)
 {
 	g_aPlayer[nIdx].bUse = true;
 	g_aPlayer[nIdx].pos = pos;
+	g_aPlayer[nIdx].posOld = pos;
 	g_aPlayer[nIdx].rot = rot;
 	g_aPlayer[nIdx].nIdxShadow = SetShadow(SHADOWTYPE_CIRCLE, SHADOｗ, SHADOｗ);
 }
